@@ -1,0 +1,231 @@
+<html>
+
+<!--
+==============================================================================
+Project:    SimpleX
+Module:     
+File:       consultation.htm
+
+The SimpleX consultation page.
+
+Copyright (C) Ryllan Kraft. 2002-2003.  All rights reserved.
+==============================================================================
+-->
+
+<head>
+<title>SimpleX Consultation</title>
+<link rel="stylesheet" type="text/css" href="simplex.css">
+<script language="JavaScript" type="text/javascript">
+var useLayers = false;
+var traceZone;
+var traceBox;
+var uiZone;
+function initialise()
+{
+    setAskOptions('radio');
+    if (typeof(idTraceZone) != "undefined")
+    {
+        traceZone = idTraceZone;
+        uiZone = divUIZone;
+    }
+    else if (document.getElementById)
+    {
+        traceZone = document.getElementById("idTraceZone");
+        uiZone = document.getElementById("divUIZone");
+        //uiZone = document.frames["ifrUIZone"];
+    }
+    else if (typeof(document.layers) != "undefined")
+    {
+        //NN4
+        traceZone = document.layers["idTraceZone"];
+        uiZone = document.layers["layUIZone"];
+
+    }
+//alert('traceZone='+traceZone);
+//alert('uiZone='+uiZone);
+//alert('uiZone.nodeName='+uiZone.nodeName+' uiZone.tagName='+uiZone.tagName);
+    if (traceZone)
+    {
+        traceBox = traceZone.document.forms["frmIO"].txtaTrace;
+        setTrace(top.infTrace);
+    }
+    toggleTrace(false);
+//    setUIZone('<h1>Some text</h1><p>Some more</p>');
+    resumeConsult();
+}
+function terminate()
+{
+    status = '';
+}
+function setTrace(str)
+{
+//alert('setTrace str='+str);
+    if (traceBox) traceBox.value = str;
+}
+function appendTrace(str)
+{
+    if (traceBox)
+    {
+        if (traceBox.value) traceBox.value += '\n';
+        traceBox.value += str;
+    }
+}
+function setUIZone(str)
+{
+    if (uiZone)
+    {
+        if (typeof(uiZone.innerHTML) != "undefined")
+        {
+            uiZone.innerHTML = str;
+        }
+        else if (typeof(document.layers) != "undefined")
+        {
+            var doc = uiZone.document;
+            doc.writeln(str);
+            doc.close();
+        }
+    }
+}
+function clearUIZone()
+{
+    if (uiZone)
+    {
+        if (typeof(uiZone.innerHTML) != "undefined")
+        {
+            uiZone.innerHTML = '';
+        }
+        else if (typeof(document.layers) != "undefined")
+        {
+            uiZone.document.clear();
+        }
+    }
+}
+var tracezone_height;
+var uizone_top;
+function toggleTrace(chkd)
+{
+//alert(chkd);
+    if (typeof(traceZone.style) != "undefined")
+    {
+        var dsply = 'none';
+        if (chkd) dsply = 'block';
+        traceZone.style.display = dsply;
+    }
+    else
+    {
+        var vis = 'hide';
+        if (chkd) vis = 'show';
+//alert('traceZone.clip.height='+traceZone.clip.height);
+        if (typeof(tracezone_height) == "undefined") tracezone_height = traceZone.clip.height;
+        traceZone.visibility = vis;
+        if (uiZone)
+        {
+            if (typeof(uizone_top) == "undefined") uizone_top = uiZone.top;
+            if (!chkd) uiZone.top = uizone_top - tracezone_height;
+            else uiZone.top = uizone_top;
+            uiZone.visibility = 'show';
+        }
+    }
+}
+function setAskOptions(option)
+{
+    if (typeof(top.uiSetAskOptions) == "function")
+        top.uiSetAskOptions(option);
+}
+function beginConsult()
+{
+    top.setInfProperties(
+        document.frmInf.selRes.options[document.frmInf.selRes.selectedIndex].value,
+        document.frmInf.selSel.options[document.frmInf.selSel.selectedIndex].value,
+        document.frmInf.chkReqLeaves.checked,
+        document.frmInf.chkDbgTrace.checked);
+    clearUIZone();
+    top.beginConsultation();
+}
+function resumeConsult()
+{
+    top.setInfProperties(
+        document.frmInf.selRes.options[document.frmInf.selRes.selectedIndex].value,
+        document.frmInf.selSel.options[document.frmInf.selSel.selectedIndex].value,
+        document.frmInf.chkReqLeaves.checked,
+        document.frmInf.chkDbgTrace.checked);
+    clearUIZone();
+    var len = top.kb.actions.length;
+    if (len == 0)
+    {
+        setUIZone('<h1>No actions for consultation</h1>');
+    }
+    else if (top.kb.actions[len - 1].tried)
+    {
+        setUIZone('<h1>Consultation completed</h1>');
+    }
+    else
+    {
+        top.resumeConsultation();
+    }
+}
+
+// Functions for generated sections.
+
+function enterResponse(dname, inputName, input)
+{
+    top.uiResponse(dname, inputName, input);
+}
+
+function enterResponseOnReturn(dname, inputName, textEntry)
+{
+    top.uiResponseOnReturn(dname, inputName, textEntry);
+}
+
+function noResponse(dname)
+{
+    top.uiNoResponse(dname);
+}
+
+function backTrack()
+{
+    top.backTrail();
+}
+</script>
+</head>
+<body onload="initialise()" onunload="terminate()">
+<h1>Consultation</h1>
+
+<form name="frmInf">
+Inference Properties<a href="information.htm#InferenceProperties">*</a> <small>
+&nbsp; Resolution <select name="selRes">
+<option value="first">First<option value="quick">Quick
+<option value="specific">Specific<option value="random">Random</select>
+&nbsp; Selection <select name="selSel">
+<option value="first">First<option value="quick">Quick
+<option value="specific">Specific<option value="random">Random</select>
+&nbsp; Request leaves<input type="checkbox" name="chkReqLeaves" checked>
+&nbsp; Debug trace<input type="checkbox" name="chkDbgTrace"></small>
+<br><br>
+<input name="btnConsult" type="button" value="Begin Consultation" onclick="beginConsult()">
+&nbsp; <input name="btnReconsult" type="button" value="Resume Consultation" onclick="resumeConsult()">
+&nbsp; <small>Trace<input type="checkbox" onclick="toggleTrace(this.checked)"></small>
+&nbsp; <small>Ask Options
+ <input name="radAskOpts" type="radio" checked onclick="setAskOptions('radio')">Radio
+ <input name="radAskOpts" type="radio" onclick="setAskOptions('select')">Select
+</small>
+<br>
+</form>
+
+<div id="idTraceZone" style="position:relative"> <!--Is an ilayer-->
+<form name="frmIO">
+<textarea name="txtaTrace" class="txtaTrace" rows="6" cols="40" 
+style="width:100%">
+</textarea>
+</form>
+</div>
+
+<layer id="layUIZone">
+</layer>
+<nolayer>
+<div id="divUIZone">
+</div>
+</nolayer>
+
+</body>
+</html>

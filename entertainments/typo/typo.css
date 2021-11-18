@@ -1,0 +1,30 @@
+/*============================================================================
+Project:    Typo
+Module:     
+File:       typo.css
+
+Cascading style sheet.
+
+Copyright (C) Ryllan Kraft. 2002.  All rights reserved.
+============================================================================*/
+
+body
+{
+    background-color: #99ffff;
+    font-family: serif;
+    font-size: 12pt;
+}
+
+.clsMatchText
+{
+}
+/* .clsCurrentText { font-size: larger } */
+
+.clsTypedText
+{  
+}
+
+.clsResultText
+{
+    font-style: italic;  
+}

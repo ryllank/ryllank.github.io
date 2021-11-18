@@ -1,0 +1,203 @@
+<html>
+
+<!--
+==============================================================================
+Project:    SimpleX
+Module:     
+File:       showkb.htm
+
+The SimpleX show knowledge base page.
+
+Copyright (C) Ryllan Kraft. 2002-2003.  All rights reserved.
+==============================================================================
+-->
+
+<head>
+<title>SimpleX Knowledge Base</title>
+<link rel="stylesheet" type="text/css" href="simplex.css">
+<script language="JavaScript" type="text/javascript">
+var oldstatus;
+var xmlElement;
+var xmlViaXML;
+var xmlViaIFRAME;
+
+function initialise()
+{
+    oldstatus = status;
+    showKB();
+}
+
+function terminate()
+{
+    status = oldstatus;
+}
+
+function getFormat()
+{
+    return top.getRadioValue(document.frmIO.radKBFormat);
+}
+
+function showKB()
+{
+    var format = getFormat();
+    document.frmIO.txtaKB.value = top.printKB(format);
+    var suppressTextEntry = true;
+    if (format == 'javascript')
+    {
+        suppressTextEntry = false;
+    }
+    else if ((format == 'xml') && (xmlElement) && (xmlViaXML))
+    {
+        suppressTextEntry = false;
+    }
+    document.frmIO.txtaKB.readOnly = suppressTextEntry;
+    document.frmIO.btnEnterText.disabled = suppressTextEntry;
+}
+function loadText()
+{
+    var xmlDoc;
+    var format = getFormat();
+    if (format == 'javascript')
+    {
+        status = '';
+        top.clearKB();
+        top.loadKB(document.frmIO.txtaKB.value, format);
+        top.compileKB();
+        showKB();
+    }
+    else if ((format == 'xml') && (xmlElement) && (xmlViaXML))
+    {
+        xmlDoc = xmlElement.XMLDocument;
+        if (xmlDoc)
+        {
+            xmlDoc.loadXML(document.frmIO.txtaKB.value);
+            if (xmlDoc.documentElement)
+            {
+                top.clearKB();
+                top.parseXML(xmlDoc);
+                top.compileKB();
+                showKB();
+            }
+            else
+            {
+                alert('Failed to load the XML');
+            }
+        }
+        else
+        {
+            alert('Failed to access XML Document');
+        }
+    }
+    else
+    {
+        var msg = 'Cannot load in "' + format + '" format - only "javascript"';
+        status = msg;
+    }
+}
+function textChanged()
+{
+    var format = getFormat();
+    if (format != 'javascript')
+    {
+        var msg = 'Don\'t change in "' + format + '" format  - can only load "javascript"';
+        status = msg;
+    }
+    else
+    {
+        status = '';
+    }
+}
+function loadXMLFile()
+{
+    var fil = '';
+    var elm = document.frmIO.elements["filXML"];
+    if (elm) fil = elm.value;
+    if (fil)
+    {
+        xmlElement.src = top.urliseFile(fil);
+    }
+    var xmlDoc;
+    if (xmlViaXML)
+    {
+        xmlDoc = xmlElement.XMLDocument;
+    }
+    else
+    {
+        xmlDoc = xmlElement.contentDocument;
+    }
+    if (xmlDoc)
+    {
+        if (xmlDoc.documentElement)
+        {
+            top.clearKB();
+            top.parseXML(xmlDoc);
+            top.compileKB();
+            showKB();
+        }
+        else
+        {
+            alert('Failed to load the XML');
+        }
+    }
+    else
+    {
+        alert('Failed to access XML Document');
+    }
+}
+function selectText()
+{
+    document.frmIO.txtaKB.select();
+    document.frmIO.txtaKB.focus();
+}
+</script>
+</head>
+<body onload="initialise()" onunload="terminate()">
+<h1>Knowledge Base</h1>
+
+<xml id="xmlXML"></xml> 
+<iframe id="xmlIFRAME" style="" height="0" width="0" frameborder="0"></iframe> 
+
+<form name="frmIO">
+Show
+<input name="radKBFormat" type="radio" onclick="showKB()" value="text" checked>text
+<input name="radKBFormat" type="radio" onclick="showKB()" value="javascript">javascript
+<input name="radKBFormat" type="radio" onclick="showKB()" value="xml">xml
+<script language="JavaScript" type="text/javascript">
+    xmlViaXML = false;
+    if (typeof(xmlElement) == "undefined")
+    {
+        if (typeof(xmlXML) != "undefined") //XML Data Island (as for IE5+).
+        {
+            if (typeof(xmlXML.XMLDocument) != "undefined")
+            {
+                xmlElement = xmlXML;
+                xmlViaXML = true;
+            }
+        }
+        else if (document.getElementById)
+        {
+            xmlElement = document.getElementById("xmlIFRAME"); // Iframe (hidden) (as for NN6+)
+        }
+    }
+
+if (xmlElement)
+{
+    var str = '';
+    str += '&nbsp;&nbsp; XML File<input type="file" ' +
+           'name="filXML" value="fred">\n';
+    str += '<input name="btnLoadXML" type="button" value="Load" onclick="loadXMLFile()">\n';
+    document.writeln(str);
+}
+</script>
+<p>Copy the KB and save in a text file.
+<br>Edit the KB or paste in from previously saved file and then: &nbsp;
+<input name="btnEnterText" type="button" value="Enter" disabled onclick="loadText()">
+&nbsp;&nbsp;<a href="javascript:selectText()">[SelectAll]</a>
+</p>
+<hr>
+<textarea name="txtaKB" rows="20" cols="50" style="width:100%"
+  onchange="textChanged()">
+</textarea>
+</form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/*============================================================================
+Project:    SimpleX
+Module:     
+File:       simplex.css
+
+Cascading style sheet to be used in pages that should have a common appearance.
+
+Copyright (C) Ryllan Kraft. 2002-2003.  All rights reserved.
+============================================================================*/
+
+a:hover
+{
+    color: highlight;
+}
+body
+{
+    /*background-image: url(texture.gif);*/
+    background-color: #adf7ff; /*aqua; silver;*/
+    font-family: serif;
+    font-size: 12pt;
+}
+/*input, select, table
+{
+    font-family: serif;
+    font-size: 100%;
+}*/
+/*textarea
+{
+    font-family: monospace;
+}*/
+h1
+{
+    font-size: 200%;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+h2
+{
+    font-size: 110%;
+    font-weight: bold;
+    font-family: serif;
+}
+h3
+{
+    font-size: 100%;
+    font-weight: bold;
+    font-style: italic;
+    font-family: serif;
+}
+ul
+{
+    margin-top: 0;
+}
+.linkText
+{
+    font-family: serif;
+    font-weight: normal;
+    font-size: 12pt;
+}
+/*form
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}*/
+/*table
+{
+    background-color: silver;
+}*/
+.nolink, .nolink:link, .nolink:hover, .nolink:visited, .nolink:active
+{
+    text-decoration:none;
+    color:#000000;
+}

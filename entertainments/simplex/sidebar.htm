@@ -1,0 +1,62 @@
+<html>
+
+<!--
+==============================================================================
+Project:    SimpleX
+Module:     
+File:       sidebar.htm
+
+The SimpleX sidebar page.
+
+Copyright (C) Ryllan Kraft. 2002.  All rights reserved.
+==============================================================================
+-->
+
+<head>
+<title>SimpleX</title>
+<link rel="stylesheet" type="text/css" href="simplex.css">
+</head>
+<body>
+<h1>SimpleX</h1>
+<noscript>
+<p>This needs to have scripting (JavaScript) active.</p>
+</noscript>
+<script language="JavaScript" type="text/javascript">
+if (!document.layers)
+{
+    if (typeof(document.body.innerHTML) == "undefined")
+    {
+        document.write(
+            '<p>This needs Dynamic HTML "innerHTML" (or "layers")<br>\n' +
+            '(e.g. use MS Internet Explorer 4+ or Netscape Navigator 4+)</p>');
+    }
+}
+</script>
+<p>
+<a href="information.htm" target="main">Information</a>
+</p>
+<p>
+<a href="showkb.htm" target="main">Knowledge Base</a><br>
+<form>
+Examples:<br>
+<script language="JavaScript" type="text/javascript">
+document.write(top.selectExamples());
+</script>
+</form>
+</p>
+<p>
+<a href="javascript:top.listDataitems()" target="main">Dataitems</a>
+</p>
+<p>
+<a href="consultation.htm" target="main">Consultation</a>
+</p>
+<p>Edit<br>
+<a href="javascript:top.listActions()" target="main">Actions</a><br>
+<a href="javascript:top.listRules()" target="main">Rules</a><br>
+<a href="javascript:top.listRequests()" target="main">Requests</a>
+</p>
+<div style="position:absolute;bottom:20px"> <!-- Up a bit in case of bottom scrollbar. -->
+<small><small>Copyright &copy; Ryllan Kraft 2002</small></small>
+</div>
+</body>
+</html>

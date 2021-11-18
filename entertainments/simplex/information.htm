@@ -1,0 +1,231 @@
+<html>
+
+<!--
+==============================================================================
+Project:    SimpleX
+Module:     
+File:       information.htm
+
+The SimpleX information page.
+
+Copyright (C) Ryllan Kraft. 2002-2003.  All rights reserved.
+==============================================================================
+-->
+
+<head>
+<title>SimpleX Information</title>
+<link rel="stylesheet" type="text/css" href="simplex.css">
+</head>
+<body>
+<h1>Information</h1>
+
+<h2>Overview</h2>
+<p>
+SimpleX is a simple consultative expert system shell that runs in a web 
+browser. You can create knowledge bases composed of <a href="#Actions">actions</a>, 
+<a href="#Rules">rules</a> and <a href="#Requests">requests</a>.</p>
+
+<p>
+You can use SimpleX to view the code for a knowledge base in text, 
+JavaScript, and XML formats. 
+The JavaScript script format will allow you to <a href="#SaveAndLoad">load</a> 
+knowledge bases you have saved. 
+If your browser supports XML (for instance Internet Explorer 5 or above) then 
+knowledge bases saved in XML can also be loaded.
+</p>
+
+<p>
+There are a number of <a name="Examples">example knowledge bases</a> that 
+have been built in to SimpleX, that you can try out, and use to help develop 
+your own knowledge bases.
+</p>
+
+<p>
+You can view the <a href="#Dataitems">data items</a>, which are defined in 
+rules or requests in the knowledge base, and set values for them prior to a 
+consultation.
+</p>
+
+<p>
+You can perform a <a href="#Consultation">consultation</a>, which will 
+follow the actions specified in the knowledge base, and invoke the rules and 
+requests as it needs them (according to 
+the <a href="#InferenceProperties">inference properties</a>).
+</p>
+
+<p>
+SimpleX has a forms-based <a href="#Editor">editor</a>, which lets you 
+edit a knowledge base without having to use a code format.
+</p>
+
+<hr>
+
+<h2><a name="Actions"><a href="javascript:alert(top.dumpActions())" class="nolink">
+Actions</a></a></h2>
+<p>
+Actions tell SimpleX what to do when it performs a consultation. The 
+actions can be:
+<ul>
+<li><strong>consider</strong> a <em>data item</em> - the consultation will 
+try to get a value for the dataitem. It will use a request (if there is one) 
+to ask the user for the value, or else use a rule that has the data item 
+as one of its conclusions. This may mean it has to consider other data items which may
+involve more requests and rules.</li>
+<li><strong>output</strong> a set of strings and the values of data items</li>
+<li><strong>pause</strong>, which will stop the run of a consultation (though 
+it can later be resumed).</li>
+</ul>
+</p>
+
+<h2><a name="Rules"><a href="javascript:alert(top.dumpRules())" class="nolink">
+Rules</a></a></h2>
+<p>
+SimpleX has simple rules, of the form 
+<strong>if</strong> <em>conditions</em> <strong>then</strong> <em>conclusions</em>.
+</p>
+
+<p>
+The conditions are a set of clauses each involving a data item. The condition 
+may check if the value is 'true' or if it is equal to a specific value. It may 
+check for other kinds of relationships, such as greater or less than the specified 
+value. A condition clause can be negated. All the condition clauses must be 
+true (i.e. they are ANDed together) for the rule to be valid.
+</p>
+
+<p>
+The conclusions are a set of one or more data items, and each has a value 
+which is to be assigned to it, when the rule's conditions are true.
+</p>
+
+<p>
+You don't need to specify any conditions, in which case the rule is 
+always valid and its conclusions may be invoked whenever needed.
+</p>
+
+<p>
+You can specify the rule as a default rule, in which case its conclusions will 
+only be used (if its conditions are satisfied) when all other (non-default) 
+rules have been tried first. This is useful for setting "fall-through" 
+conclusions.
+</p>
+
+<p>
+If you want to have a rule as valid when either of two clauses are true 
+(i.e. they are ORed together) then you must use two separate rules in SimpleX.
+
+<h2><a name="Requests"><a href="javascript:alert(top.dumpRequests())" class="nolink">
+Requests</a></a></h2>
+<p>
+Requests are used to tell SimpleX how to ask for a data item. You can specify 
+a particular prompt text, and whether the anwser should be Yes or No (corresponding 
+to 'true' &amp; 'false'), or one of a set of values.
+<br>
+Note: If a data item has no request nor any rules, then a request will be generated 
+if its value is needed in the consultation, if the 'Request leaves' 
+<a href="#InferenceProperties">inference property</a> is set.</p>
+
+<h2><a name="Dataitems"><a href="javascript:alert(top.dumpDataitems())" class="nolink">
+Data items</a></a></h2>
+<p>
+Data items are defined in rules or requests in the knowledge base. They 
+can take simple values, which can be:
+<ul>
+<li>a string or numerical value</li>
+<li>a boolean (with value 'true' or 'false') - use request style 'yesno' for this</li>
+<li>one of a set of values - use request style 'oneof'</li>
+</ul>
+</p>
+
+<h2><a name="Consultation"><a href="javascript:alert(top.dumpTrail())" class="nolink">
+Performing a consultation</a></a></h2>
+<p>
+At any time in a consultation you may set the 
+<a href="#InferenceProperties">inference properties</a>. 
+</p>
+<p>
+At any time you may begin a consultation of the current knowledge base. 
+If you leave the consultation page, when you return to it, if it does not
+resume automatically you can force it to resume.
+</p>
+<p>
+You can select display of trace messages. You can select whether to display 
+requests that have a set of responses as visible alternatives, <em>Radio</em> 
+buttons, or as options in a drop-down, <em>Select</em>, box.
+</p>
+<p>
+The consultation will start with the first action, and perform them in sequence. 
+If the action is to consider a data item, SimpleX will try to obtain a value for 
+it. It will use any request specified. If there is none, it will use any rules 
+that can set it. It may need to go back and consider other data items in order 
+to obtain this one's value.
+</p>
+
+<h3><a name="InferenceProperties">Inference Properties</a></h3>
+<p>
+These properties (in the consultation page) control the way the inference 
+works, for instance, the order in which rules and data items get considered. 
+The inference properties are:
+<ul>
+<li><em>Resolution</em> - where there is a conflict, and there are several 
+rules that can set a value for the data item being considered, select 
+the <em>First</em> (the first relevant rule in the list of them - this is the 
+default option), or <em>Quick</em> (the one with least data items required 
+for it), or <em>Specific</em> (the one with most data items required for it),
+or <em>Random</em>. The inference will choose from non-default rules according 
+to this option, in preference to default rules. If no such rule can be found, 
+it will then select from default rules (if more than one are applicable) using 
+the same conflict resolution option.
+</li>
+<li><em>Selection</em> - where a rule has several data items that must be considered, 
+select the <em>First</em> (default), or <em>Quick</em>, or <em>Specific</em>, or 
+<em>Random</em>, which work in an analogous way to <em>Resolution</em>.
+</li>
+<li><em>Request leaves</em> - whether data items, that have no rules nor requests 
+specified, should have a request generated (default is yes).
+</li>
+<li><em>Debug trace</em> - whether to add obscure debug messages to the trace 
+output (default is no).
+</li>
+</ul>
+</p>
+
+<h2><a name="SaveAndLoad">Saving and loading a knowledge base</a></h2>
+<p>
+Because SimpleX works in a browser, which is not allowed to directly write to 
+disk, you need to save a knowledge base as follows. View the knowledge base in 
+its JavaScript format. Select all the text and use the usual copy mechanism 
+(e.g. Ctrl-C) to copy the text into the clipboard. You can open a text editor 
+(such as Notepad) and paste the text into it (e.g. using Ctrl-V). This can be 
+saved as a file on your hard disk.
+</p>
+<p>
+To load the file, simply reverse the process, and copy the text from a text 
+editor into the knowledge base display (in JavaScript format). Press the 'Enter' 
+button to load it.
+</p>
+If your browser supports XML (for instance Internet Explorer 5 or above) then 
+you can save your knowledge base in XML format in a similar way to the above. 
+To load it you can browe to select the file and then press the 'Load' button 
+to read it in.
+</p>
+
+<h2><a name="Editor">Editing a knowledge base</a></h2>
+<p>
+The SimpleX forms-based editor allows you to edit the actions, rules (and from 
+there a single rule) and requests.
+</p>
+<p>
+The <img src="add.gif" alt="Add"> icon is used to add/insert a new element of 
+the appropriate type in the form. When a new element is created, SimpleX gives 
+it some attributes or text values, which you will need to change. 
+The <img src="delete.gif" alt="Delete"> icon is used to remove an element.
+</p>
+<p>
+The <img src="uparrow.gif" alt="Move Up"> icon is used move an element up one in 
+its list, so it swaps with the element above. 
+The <img src="roundarrow.gif" alt="Move Round"> icon is used to move 
+the first element in a list round to the bottom.
+</p>
+
+</body>
+</html>

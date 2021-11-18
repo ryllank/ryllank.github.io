@@ -1,0 +1,66 @@
+<html>
+<!--
+==============================================================================
+Project:    Typo
+Module:     
+File:       typo.htm
+
+The Typo page.
+
+Copyright (C) Ryllan Kraft. 2002.  All rights reserved.
+==============================================================================
+-->
+
+<head>
+<title>Typo</title>
+<style type="text/css">
+.clsCurrentText { color: blue; background-color: yellow; text-decoration: underline }
+</style>
+<link rel="stylesheet" type="text/css" href="typo.css">
+<script src="typo.js" language="JavaScript" type="text/javascript"></script>
+<script src="samples.js" language="JavaScript" type="text/javascript"></script>
+</head>
+
+<body onload="initialise()">
+
+<h1>Typo</h1>
+
+<noscript>
+<p>This requires the use of scripting (JavaScript).<p> 
+</noscript>
+
+<form name="frmSample">
+Select a sample of text to type: &nbsp;
+<script language="JavaScript" type="text/javascript">
+document.write(selectSample());
+
+if (typeof(ActiveXObject) != "undefined")
+{
+    var str = '';
+    str += '<br>or select a text file:\n';
+    str += '&nbsp; <input type="file" name="filName">\n';
+    str += '<input name="btnRunFile" type="button" value="Run" onclick="runFile(this)">\n';
+    document.write(str);
+}
+</script>
+<br>
+or enter text: <br>
+<textarea name="txtaTextA" cols="40" rows="3">
+</textarea> &nbsp;
+<input name="btnRunTextA" type="button" value="Run" 
+onclick="runText(this, document.frmSample.txtaTextA.value)">
+</form>
+
+<hr>
+
+Type the following:<br>
+
+<span id="idMatchTextArea" class="clsMatchText"></span><br>
+<span id="idTypedTextArea" class="clsTypedText"></span><br>
+
+<hr>
+<span id="idResultArea" class="clsResultText"></span><br>
+
+</body>
+
+</html>
