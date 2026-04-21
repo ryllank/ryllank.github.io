@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ryllan J E Kraft" /><link rel="canonical" href="https://ryllank.github.io/esl-studio/guides/esl-displays.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>ESL-Displays - Post Run Analysis - ESL-Studio</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../extra/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ESL-Displays - Post Run Analysis";
+        var mkdocs_page_input_path = "guides/esl-displays.md";
+        var mkdocs_page_url = "/esl-studio/guides/esl-displays.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../img/ESL-Studio-logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../index.html">ESL-Studio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview of ESL-Studio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="std-menu.html">ESL-Studio Standard Menu</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="std-entities.html">The ESL-Studio Standard Simulation Entities</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="esl-sec.html">ESL-SEC - Simulation Execution Control</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">ESL-Displays - Post Run Analysis</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#starting-esl-displays">Starting ESL-Displays</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loading-displays">Loading Displays</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#specifying-plots">Specifying Plots</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#specification-files">Specification files</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#optionspreferences">Options/Preferences</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#use-external-plotting-program">Use external plotting program</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#esl-displays-command-line-options">ESL-Displays Command Line Options</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">ESL-Studio</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User Guide</li>
+      <li class="breadcrumb-item active">ESL-Displays - Post Run Analysis</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="esl-displays-post-run-analysis">ESL-Displays - Post Run Analysis</h1>
+<p>The ESL-Displays program, part of the ESL Software simulation product,
+allows you to analyse recorded display files. Typically the display
+files will be "prepare" files either generated from the ESL PREPARE
+statement or recorded when running a simulation with the ESL-SEC
+program.</p>
+<h2 id="starting-esl-displays">Starting ESL-Displays</h2>
+<p>You normally start ESL-Displays from ESL-Studio as follows:</p>
+<ul>
+<li>Use the Simulate &gt; Post Run Analysis... menu item to launch the ESL-Displays
+    program directly from ESL-Studio. The ESL-Displays window will
+    open without any display files loaded or plots defined.</li>
+</ul>
+<p>You may also initiate the ESL-Displays independently from ESL-Studio by invoking
+the program directly:</p>
+<ul>
+<li>
+<p>You can start ESL-Displays by invoking ESL-Displays from an operating system menu,
+    such as the Start Menu, or a short-cut (for example pinned to the
+    Desktop). It will then open the ESL-Displays window, again, without
+    without any display files loaded or plots defined.</p>
+</li>
+<li>
+<p>You can start ESL-Displays by invoking the executable,
+    <code>esl_displays.exe</code> (<code>esl_displays</code> Linux), installed with ESL-Pro 
+    or ESL-Lite in the <code>esl</code> <code>bin</code> directory of the installation, 
+    directly from a file browser application such as Windows Explorer 
+    (for example by double clicking). It will then open without display 
+    files or plots.</p>
+</li>
+<li>
+<p>You may also open it via a file browser application by double clicking on
+    a previously saved ESL-Displays specification file (with extension <code>.dis</code>).
+    ESL-Displays will then open with the display files loaded, and any
+    plots that may have been defined.<br>
+    Note: For Linux you would need to have explicitly set up the <code>.dis</code>
+    file-type to open with ESL-Displays program (<code>esl_displays</code>).</p>
+</li>
+<li>
+<p>You can also invoke ESL-Displays by command from a command prompt (terminal)
+    window. Normally ESL-Displays is installed on the "PATH" directory, so you just
+    need to enter <code>esl_displays</code>. Otherwise enter the full path to the executable.
+    See below for a description of the ESL-Displays command line options.</p>
+</li>
+</ul>
+<h2 id="loading-displays">Loading Displays</h2>
+<p>The main ESL-Displays screen allows you to specify and display plots with
+data taken from a set of loaded display files.</p>
+<p>You use the "Load" button on the main ESL-Displays screen to load a recorded
+display file, and add it to set of them. Loaded display file names appear
+in the Display Files panel.</p>
+<p>Note: In addition to full "prepare" files, ESL-Displays allows you to load
+"tabulate" display files, however these typically do not retain the accuracy
+of prepare files.</p>
+<p>When a display file is selected in the Display Files panel, its contents are
+displayed in the Variables panel from where a plot selection may be made.
+Some information, including the number of runs for which the display file data
+corresponds appears below the Display Files and Variables panels.</p>
+<p>Pressing the "Info" button shows more detailed information from a selected
+display file, including any title/subtitle set in the display file.</p>
+<p>The "Export" button allows you to export a display file, typically to convert
+it to another format such as a Comma Separated Values (CSV) format which may
+be imported into other applications such as spreadsheets.</p>
+<h2 id="specifying-plots">Specifying Plots</h2>
+<p>Several plots may be specified and the variables to be displayed in
+each selected from the variables from any of the loaded display files.
+This allows the comparison of results from different ESL-Studio
+sessions, or with experimental data converted to display file format.</p>
+<p>The plot's independent variable (used for the X-axis), which is
+typically T (for time), determines the primary display file for the
+plot. Variables that come from that display file will have values
+directly corresponding to the values for the independent variable for
+each run in that display file.</p>
+<p>When a variable from a different display file is to be incorporated
+into the plot, this will lead to an extra "superimposed run" to be
+plotted. The superimposed run requires its own independent variable
+from the same display file as the new variable. This will generally
+correspond to the same name as in the primary display file, typically
+"T" (for time again). When the variable is first added, this must be
+set in the Details dialog, where subsequently it may be viewed and
+changed.</p>
+<p>Note: ESL-Displays plot Contents area shows the display file a variable
+comes from by a number, the number of the display files loaded into
+ESL-Display, followed by a "&gt;" before the variable name. Thus "2&gt;T" is
+the variable called T from the 2nd display file and may be the plot's
+independent variable, "2&gt;X" is a variable from the same display file,
+"3&gt;Y" is a variable taken from a different display file and "3&gt;T" might
+be the superimposed run's independent variable.</p>
+<p>Note: In fact it may be more complicated as the name may be preceded by
+an ESL module name in (round) brackets (parentheses), may include an
+annotation (after a ":") and may include a run value or range in curly
+(or "squiggly") brackets (braces).</p>
+<p>It is important that the range of values for the independent variable
+to be used in the superimposed run be appropriate and consistent with
+the range in the primary display file for the plot's independent
+variable as they will be mapped to the plot's x-axis. Also, the range
+of values for all dependent variables (whether from the primary display
+file or in superimposed runs) should not differ by too much as they all
+are to be plotted on the y-axis.</p>
+<p>The "Details" button invokes a Variable Details dialog which allows you
+to select the runs for a variable to be plotted against the runs of the
+independent variable. For variables that are not in the primary display
+file (for which a superimposed run will be plotted), it allows you to
+change the superimposed run's independent variable from its own display
+file. This dialog also allows you to set or change an annotation for
+the variable. This dialog can also be invoked by double-clicking a
+variable name.</p>
+<p>The "Properties" button invokes a Properties dialog to allow you set up
+features for the the plot, including title, axis properties and how the
+data points will be plotted.</p>
+<p>The "Plot" button opens the plot window, and plots the data as specified for
+current plot.</p>
+<p>The "Save Data" button allows you to export the data that you have specified
+for the current plot to a display file or other format (such as CSV).</p>
+<h2 id="specification-files">Specification files</h2>
+<p>You can save a specification file (with .dis extension) that holds the set
+of display files you have loaded and the set of plot definitions you have
+set up from the File &gt; Save Specification menu item. The corresponding
+File &gt; Load Specification menu item allows you to easily load or change the
+display files and plot definitions.</p>
+<h2 id="optionspreferences">Options/Preferences</h2>
+<p>ESL-Displays has the following option that may be changed via the
+File &gt; Options/Preferences menu item:</p>
+<ul>
+<li>Use external plotting program</li>
+</ul>
+<h3 id="use-external-plotting-program">Use external plotting program</h3>
+<p>By default ESL-Displays uses an internal plotting dialog. If you select this
+option, ESL-Displays will use the standard <code>plotting</code> program used in ESL
+simulations.</p>
+<p>Note: It is possible to change the actual <code>plotting</code> program by setting
+the ESL_PLOTTING environment variable.</p>
+<p>Note: When an external <code>plotting</code> program is used ESL-Displays does not
+save the position and size (geometry) of the plot windows.</p>
+<h2 id="esl-displays-command-line-options">ESL-Displays Command Line Options</h2>
+<p>If ESL-Displays is invoked by command, the following options are supported:</p>
+<pre><code>esl_displays [ -fixed ] [ &lt;source-file&gt; ]
+</code></pre>
+<p>Notes: The option may be abbreviated to just the first letter.
+The option is case-insensitive.
+A pair of dashes (--) may be used instead of the single dash (-).
+A forward slash (/) may be used instead of the dash (-) under Windows.</p>
+<ul>
+<li>
+<p>source-file:
+    A source file may be either an ESL "prepare" file (<code>.dsp</code>) or an ESL-Displays
+    specification file (<code>.dis</code>).</p>
+<p>If an ESL-Displays specification file (<code>.dis</code>) is given, the complete
+specification (when the file was saved) is setup.</p>
+</li>
+<li>
+<p>-fixed:
+    If this option is given, ESL-Displays will not allow changing the specification
+    file path.</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="esl-sec.html" class="btn btn-neutral float-left" title="ESL-SEC - Simulation Execution Control"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright (c) 2026 Ryllan J E Kraft</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="esl-sec.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

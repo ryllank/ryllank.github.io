@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ryllan J E Kraft" /><link rel="canonical" href="https://ryllank.github.io/esl-studio/introduction.html" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Introduction - ESL-Studio</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="extra/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Introduction";
+        var mkdocs_page_input_path = "introduction.md";
+        var mkdocs_page_url = "/esl-studio/introduction.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".">
+          <img src="img/ESL-Studio-logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="index.html">ESL-Studio</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Introduction</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="guides/overview.html">Overview of ESL-Studio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="guides/std-menu.html">ESL-Studio Standard Menu</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="guides/std-entities.html">The ESL-Studio Standard Simulation Entities</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="guides/esl-sec.html">ESL-SEC - Simulation Execution Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="guides/esl-displays.html">ESL-Displays - Post Run Analysis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">ESL-Studio</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Home</li>
+      <li class="breadcrumb-item active">Introduction</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="introduction-to-esl-studio">Introduction to ESL-Studio</h1>
+<p>ESL-Studio is an integrated development environment for creating ESL
+simulations using block diagrams and ESL source code. It may be used
+ESL Software's simulation product - either ESL-Pro or ESL-Lite.</p>
+<p>Using ESL-Studio's graphical user interface you can manage each stage
+of the simulation activity.</p>
+<p>ESL-Studio provides the following facilities:</p>
+<ul>
+<li>Multi-window graphical block diagram editor for model construction.</li>
+<li>Inclusion of ESL coded submodels where appropriate.</li>
+<li>Interactive control of simulation execution (via the ESL-SEC program)
+  with run-time graph plotting.</li>
+<li>Display manager with post-run graph plotting (via the ESL-Displays
+  program).</li>
+<li>Sophisticated profile features allow themes for diagram appearance and
+  for standard and library simulation entities.</li>
+</ul>
+<p>ESL-Studio includes a graphical editor for block diagram style model
+descriptions, while allowing textual ESL code to be used where
+appropriate (for example to describe highly non-linear elements). You
+select standard simulation entities and interconnect them on a block
+diagram to build up the simulation description. ESL submodels can be
+created and included in a diagram through a special submodel element.</p>
+<p>Once you have created a simulation program (graphically, textually or a
+combination of both), compilation is initiated from ESL-Studio.
+You may then execute the compiled program immediately through an
+interpreter, or, for ESL-Pro, you have the option to further translate
+it to C++ or FORTRAN. The resulting executable program may then be run
+from ESL-Studio.
+In either case, execution is managed by the ESL-SEC (Simulation
+Execution Control) program, part of the ESL Software simulation
+product, which provides run-time control of the simulation.
+You have access to all program variables and parameters from the
+ESL-SEC program. This includes simulation parameters such as the
+communication interval, final simulation time, choice of integration
+algorithm and error tolerances. All variables and parameters can be set
+and changed dynamically.
+You can specify graphical and tabulated output on your block diagram
+through the use of special display icon simulation entities or
+alternatively from the Runtime Displays option of ESL-SEC. You can log
+all run time commands and output specifications to a driver file that
+can be used at a later time to repeat simulation scenarios.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="ESL-Studio"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="guides/overview.html" class="btn btn-neutral float-right" title="Overview of ESL-Studio">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright (c) 2026 Ryllan J E Kraft</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="index.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="guides/overview.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

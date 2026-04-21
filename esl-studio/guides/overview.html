@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ryllan J E Kraft" /><link rel="canonical" href="https://ryllank.github.io/esl-studio/guides/overview.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Overview of ESL-Studio - ESL-Studio</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../extra/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Overview of ESL-Studio";
+        var mkdocs_page_input_path = "guides/overview.md";
+        var mkdocs_page_url = "/esl-studio/guides/overview.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../img/ESL-Studio-logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../index.html">ESL-Studio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Overview of ESL-Studio</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#window-layout">Window Layout</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-a-simulation-application">Creating a Simulation Application</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#developing-a-block-diagram">Developing a block diagram</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#connecting-simulation-entities-with-signal-lines">Connecting simulation entities with signal lines</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setting-properties-for-objects-on-the-diagram">Setting properties for objects on the diagram</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#input-and-output-arguments">Input and Output Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#submodel-calls">Submodel Calls</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#display-icons">Display Icons</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#developing-a-textual-submodel">Developing a textual submodel</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#running-the-simulation">Running the Simulation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#post-run-analysis">Post Run Analysis</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="std-menu.html">ESL-Studio Standard Menu</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="std-entities.html">The ESL-Studio Standard Simulation Entities</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="esl-sec.html">ESL-SEC - Simulation Execution Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="esl-displays.html">ESL-Displays - Post Run Analysis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">ESL-Studio</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User Guide</li>
+      <li class="breadcrumb-item active">Overview of ESL-Studio</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="overview-of-esl-studio">Overview of ESL-Studio</h1>
+<p>ESL-Studio is a desktop application to allow you to develop an ESL
+simulation which is expressed in an ESL-Studio application and may be
+saved as an <code>.eslstudio</code> file.</p>
+<h2 id="window-layout">Window Layout</h2>
+<p>ESL-Studio is organised in a common desktop application style as a
+window with a menu-bar and toolbar, and a central "main view area"
+which can contain different "views". They can be selected with "tabs"
+at the top of the main view area. The main view area may be split to
+show views side by side, if desired, but they are always in the main
+view area. These views are primarily used to represent or model the
+simulation, for example as block diagrams, ESL code, package variable
+definitions and simulation parameter values.</p>
+<p>The standard menu on the window menu-bar is detailed
+<a href="std-menu.html">here</a>. The standard toolbar provides short-cuts for
+most of the menu items.</p>
+<p>There are also secondary views or "panes" primarily used for
+information or editing. They may be docked in various locations round
+the main view area, or floated free (as secondary windows).
+The main panes are:</p>
+<ul>
+<li>Application pane - this shows the structure of the simulation
+    application - including the simulation entity objects in diagrams</li>
+<li>Elements pane - presents a structured menu of available simulation
+    entities that may be put in the the diagrams</li>
+<li>Properties pane - the properties of what may be selected - for
+    instance a Model or Submodel for a diagram view, or specific properties
+    for a selected simulation entity object</li>
+<li>Messages pane - an area that will show information or errors as the
+    simulation application is being developed</li>
+</ul>
+<p>There are also occasions when ESL-Studio will open a "modal dialog" (a
+window that has to be closed to let you continue) in order to let you
+enter information required by the current operation. For example to
+open or save a file, for printing settings, or for ESL-Studio
+preferences or options settings.</p>
+<p>This image shows the standard layout for ESL-Studio - while editing
+an application.</p>
+<p><img alt="ESL-Studio editing - shows layout" src="images/esl-studio-editing.png" title="ESL-Studio - editing" /></p>
+<h2 id="creating-a-simulation-application">Creating a Simulation Application</h2>
+<p>The basic structure of a simulation application normally consists of:</p>
+<ul>
+<li>a main model, represented by a block diagram, which will correspond to
+    the ESL MODEL when the the simulation's ESL code is generated</li>
+<li>graphical submodels, which are also represented by block diagrams and
+    generate ESL SUBMODEL code</li>
+<li>textual submodels, represented directly in ESL code</li>
+</ul>
+<p>ESL Studio always has a diagram view for the main model. The Insert
+menu has entries to allow you to create new submodel diagram or textual
+submodel views for your application.</p>
+<p>Other components of a simulation application include Packages (which generate
+ESL PACKAGEs) and the set of Simulation Parameter values (to be set initially
+when running the simulation).</p>
+<h3 id="developing-a-block-diagram">Developing a block diagram</h3>
+<p>When you have a diagram selected in the main view area you can add
+<a href="std-entities.html">simulation entities</a> to it from the tree view in
+the Elements pane. You select an entry and drag it across to the
+desired location in the diagram (or double click to send it to the
+centre of the view).</p>
+<p>There is also a set of simulation entities, and other graphical
+objects, which may be inserted via the context menu, obtained by a
+right mouse click, on the diagram background.</p>
+<p><strong>Note:</strong> The ESL User Guide and Tutorial document, available on the
+<a href="https://www.isimsimulation.com/documents/">ESL Software website documents page</a>,
+covers developing block diagrams in Chapters 2 and 3.</p>
+<h4 id="connecting-simulation-entities-with-signal-lines">Connecting simulation entities with signal lines</h4>
+<p>Most simulation entities have "ports" which are where signal lines can
+be connected. These correspond to ESL data types (Real, Integer,
+Logical) and may be for input to or output from the simulation entity.</p>
+<p>To make a connection, select a simulation entity connection port (at
+the end of its stem), with a left mouse click, to see a signal line
+extend tracking the pointer as you move the mouse.</p>
+<p>To join it to another simulation entity complete the connection on the
+destination port with another left click. ESL-Studio will check that
+the connection is valid and if so you will see a slight flash of the
+connection port when the signal line is properly connected to it.</p>
+<p>If, while extending the signal line, you left click on the diagram
+background, this will establish a node on the diagram - but continue
+extending the signal line from there.</p>
+<p>Signal lines started in error can be abandoned by a right mouse click.</p>
+<p>Signal line nodes on the diagram background are additional connection
+points, and subsequently a signal line extending from a later
+simulation entity may connect to the node, so long as the signal
+connection would be valid.</p>
+<p>Existing signal lines and nodes can be removed through their
+appropriate context menu (obtained with a right mouse click on the
+object).</p>
+<p><strong>Tip</strong>: In general, if you make any mistakes editing in ESL-Studio,
+the most straightforward way to get back is to Undo those changes in
+the undo/redo stack. This can be done via the Edit &gt; Undo menu, or by
+clicking the equivalent toolbar icon, or, in a diagram, the key
+combination Ctrl-Z.</p>
+<h4 id="setting-properties-for-objects-on-the-diagram">Setting properties for objects on the diagram</h4>
+<p>Most objects on a diagram have properties, which will appear in the 
+Properties pane when the object has been selected in the diagram (for 
+example by left mouse clicking on the object).</p>
+<p><strong>Note:</strong> If you click on the diagram background the Properties pane
+will show properties for the ESL model or submodel being represented by
+the diagram view.</p>
+<p>A simulation entity may have a set of properties for its "Attributes" -
+values which control how the simulation entity behaves in the running
+simulation (by generating the appropriate ESL code for the simulation
+entity).</p>
+<p>A simulation entity will also have a set of structured properties for
+its "Ports" - values relating to how the simulation entity connects,
+via signal lines to other simulation entities, and include setting a
+specific ESL name, for an output port (to be used in the generated
+ESL).</p>
+<p>Many properties, or components of structured properties, support
+"Annotations". These allow you to specify the property or component to
+be displayed on the diagram near the graphical object it refers to. You
+simply check (click in the check-box) for the annotation and the text
+for it will appear in a default location on the diagram. You may move
+it by double clicking on the annotation text to select it and then you
+may drag the text to a new position (relative to the object it refers
+to) holding the left mouse button down on it and moving the text with
+the pointer till you release the mouse button.</p>
+<h4 id="input-and-output-arguments">Input and Output Arguments</h4>
+<p>There are a set of Input and Output Argument simulation entities used to
+define the inputs and outputs for graphical (diagram) submodels.</p>
+<p>Their "Tag-name for input" or "Tag-name for output" ("TAG") attribute 
+value will correspond to the ESL tag name for the submodel input or 
+output in the submodel "signature", that is the ESL SUBMODEL 
+declaration specifying the argument types and local names).</p>
+<p>Input Arguments have the (boolean) attribute called "Attribute"
+("ATTR") which may be checked to specify that the input argument will
+be 'CONSTANT' in ESL and thus be an attribute for a Submodel Call for
+this Submodel, rather than an input port if "Attribute" is unchecked.</p>
+<p><strong>Note:</strong> You may also use Input and Output Arguments in the diagram
+for the main model, in which case the default ESL generation is for
+READ and PRINT statements in the generated Experiment corresponding to
+the arguments. You may, alternatively, specify your own Experiment for
+the model to call the the generated ESL MODEL with the desired values.
+ESL-SEC will prompt you for values for READ statements when invoked
+when Started or Restarted and print a message for PRINT statements when
+the simulation is expressly Ended or Finished.</p>
+<h4 id="submodel-calls">Submodel Calls</h4>
+<p>A Submodel Call is special kind of simulation entity. It allows you to
+specify an instance of a submodel - which will later be a call to that
+submodel in the generated ESL code. When you have inserted a Submodel
+Call into the diagram, or otherwise select it, its properties, in the
+Properties Pane, include the "Submodel" property - initially blank.
+This has a 'drop-down box' from which you may select from the set of
+submodels (graphical (diagram) or textual) that have been defined in
+the application.</p>
+<p>When the Submodel property is assigned, the Submodel Call's appearance
+and properties, attributes and ports, are updated to reflect the
+"signature" of the submodel.</p>
+<h4 id="display-icons">Display Icons</h4>
+<p>There is a set of Display Icon simulation entities, Plot, Table &amp;
+Prepare, which are used to set up displays - runtime plots, tables
+("Trend" or "Monitor" style, or to a "tabulate" file) and "prepare"
+files (which record the data accurately (in binary) from runs of the
+simulation).</p>
+<p>You specify the data items for the display by clicking on the centre of
+a display icon object, and an instrumentation line will extend. This
+can be processed in a similar way to signal lines, but you connect it
+(directly or indirectly) to a signal line output port of a normal
+simulation entity.</p>
+<p>Properties for display icons include giving it a Title, specifying the
+Update rate for the display when the simulation is running, and, for
+Plot, specifying how the axes should be setup.</p>
+<h3 id="developing-a-textual-submodel">Developing a textual submodel</h3>
+<p>When you insert a textual submodel you choose between two types:</p>
+<ul>
+<li>
+<p>The Insert &gt; Textual Submodel &gt; ESL menu item is used to create a new
+    editable text view in the main view area, initially set with very
+    basic ESL code. You may edit the code in the view using standard
+    text editing operations. You may commit the code being edited into
+    the application via the context menu in the text view, and, in any
+    case code changes will be committed when you move the mouse pointer
+    away from the text view. When the commit takes place ESL-Studio
+    performs basic validation of the submodel "signature" and may show
+    errors or warnings in the Messages pane. For severe errors it will
+    reject the changes, for less severe issues it does not prevent the
+    edits being committed. This will allow you to commit invalid
+    code which you plan to 'tidy up' later.<br>
+    Of course, any such code that remains when the simulation is going
+    to be run may fail in ESL generation or compilation stages.</p>
+</li>
+<li>
+<p>The Insert &gt; Textual Submodel &gt; File menu item creates a new text view
+    which is not editable when you assign an existing file to import
+    its contents into the application. ESL-Studio reads and processes
+    the file looking for ESL submodel code. The last such submodel will
+    be the name for the textual submodel in the application.</p>
+</li>
+</ul>
+<p><strong>Note:</strong> The ESL User Guide and Tutorial document, available on the
+<a href="https://www.isimsimulation.com/documents/">ESL Software website documents page</a>,
+covers developing textual submodels in Chapter 4.</p>
+<h2 id="running-the-simulation">Running the Simulation</h2>
+<p>To run the simulation for your application select the Simulate &gt; Run
+Simulation menu item (or press the toolbar run icon).</p>
+<p>By default, ESL-Studio (which will ask to save any uncommitted edits)
+will generate the ESL code for your application. It will then run the
+ESL compiler and interpreter. Of course, if it encounters any errors in
+any of these steps, ESL-Studio will put the appropriate messages in the
+Message pane and you can go back to editing the application.</p>
+<p>If successful, ESL-Studio will invoke the ESL-SEC (Simulation Execution
+and Control) program. This has many features to setup more displays (in
+addition to any defined in the ESL-Studio application) and to monitor
+simulation variables and step through the simulation.</p>
+<p><img alt="ESL-Studio running simulation" src="images/esl-studio-running-simulation.png" title="ESL-Studio - running simulation" /></p>
+<p>Refer to the <a href="esl-sec.html">ESL-SEC help page</a> for details on how to 
+control the simulation - for example to step through the integration 
+steps - and examine an modify ESL variables in the simulation, and to 
+set up runtime displays such as plots or "prepare" files which may be 
+used in post run analysis.</p>
+<h2 id="post-run-analysis">Post Run Analysis</h2>
+<p>You may have accumulated a set of recorded data, after you have run a
+number runs of simulations (with varied parameter values) or
+different invocations of the application (trying out various
+modifications), or, indeed completely different simulations (which may
+have some relationship to be investigated).</p>
+<p>The recorded data may be in the form of display files, such as accurate 
+(binary) "prepare" files (generated from the ESL PREPARE statement or 
+recorded when running a simulation with the ESL-SEC program), or 
+"tabulate" format files (for example generated from the ESL TABULATE 
+statement or recorded via ESL-SEC, or from other data that has been 
+converted to that format).</p>
+<p><strong>Note:</strong> Prepare files retain full computer precision of data saved
+whereas in tabulate files precision is limited to the number of
+significant figures recorded textually.</p>
+<p>The ESL-Displays program supports post run analysis and allows you to
+flexibly investigate and explore the data visually by composing plots
+across different data-sets.</p>
+<p>Refer to the <a href="esl-displays.html">ESL-Displays help page</a> for details -
+for example for loading display files and specifying plots.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../introduction.html" class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="std-menu.html" class="btn btn-neutral float-right" title="ESL-Studio Standard Menu">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright (c) 2026 Ryllan J E Kraft</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../introduction.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="std-menu.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

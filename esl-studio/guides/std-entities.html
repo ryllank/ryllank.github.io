@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ryllan J E Kraft" /><link rel="canonical" href="https://ryllank.github.io/esl-studio/guides/std-entities.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>The ESL-Studio Standard Simulation Entities - ESL-Studio</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../extra/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "The ESL-Studio Standard Simulation Entities";
+        var mkdocs_page_input_path = "guides/std-entities.md";
+        var mkdocs_page_url = "/esl-studio/guides/std-entities.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../img/ESL-Studio-logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../index.html">ESL-Studio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview of ESL-Studio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="std-menu.html">ESL-Studio Standard Menu</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">The ESL-Studio Standard Simulation Entities</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#Absolute">Absolute</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Arc_Cosine">Arc Cosine</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Arc_Sine">Arc Sine</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Arc_Tangent">Arc Tangent</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Arc_Tangent_2">Arc Tangent 2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Backlash">Backlash</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Base_10_Logarithm">Base 10 Logarithm</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Bistable">Bistable</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Comparator">Comparator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Complex_Pole">Complex Pole</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Constant_False">Constant False</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Constant_Integer">Constant Integer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Constant_Logical">Constant Logical</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Constant_Multiplier">Constant Multiplier</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Constant_Real">Constant Real</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Constant_True">Constant True</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Cosine">Cosine</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Deadspace">Deadspace</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Delay">Delay</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Derivative">Derivative</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Divider">Divider</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Exponential">Exponential</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#First_Order_Hold">First Order Hold</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Fourier_Transform">Fourier Transform</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Friction">Friction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Function_Generator">Function Generator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Hysteresis">Hysteresis</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Impulse_Input">Impulse Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Integer">Integer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Integer_Input">Integer Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Integer_Output">Integer Output</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Integrator">Integrator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Lead_Lag">Lead Lag</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Limited_Integrator">Limited Integrator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Limiter">Limiter</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Logical_And">Logical And</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Logical_Input">Logical Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Logical_Integrator">Logical Integrator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Logical_Negation">Logical Negation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Logical_Or">Logical Or</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Logical_Output">Logical Output</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Modulator">Modulator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Monostable">Monostable</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Multiplier">Multiplier</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Natural_Logarithm">Natural Logarithm</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#PI_Controller">PI Controller</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#PID_Controller">PID Controller</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#PID_Controller_1">PID Controller 1</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Plot">Plot (Display Icon)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Power">Power</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Prepare">Prepare (Display Icon)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Pulse_Input">Pulse Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Quantizer">Quantizer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Ramp_Input">Ramp Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Real_Input">Real Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Real_Output">Real Output</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Real_Pole">Real Pole</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Rectifier">Rectifier</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Sample_and_Hold">Sample and Hold</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Sine">Sine</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Sine_Input">Sine Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Square_Input">Square Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Square_Root">Square Root</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Standard_Integrator">Standard Integrator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Step_Input">Step Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Submodel_Call">Submodel Call</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Summer">Summer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Summer_3">Summer 3</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Switch">Switch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Table">Table (Display Icon)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Tangent">Tangent</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Time_Input">Time Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Timer">Timer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Transfer_Function">Transfer Function</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#Zero_Order_Hold">Zero Order Hold</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="esl-sec.html">ESL-SEC - Simulation Execution Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="esl-displays.html">ESL-Displays - Post Run Analysis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">ESL-Studio</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User Guide</li>
+      <li class="breadcrumb-item active">The ESL-Studio Standard Simulation Entities</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="standard-simulation-entities">Standard Simulation Entities</h1>
+<p>In ESL-Studio, simulation entities are represented by graphical objects
+(icons) that may be placed on a simulation block diagram and may be
+connected up with signal lines.</p>
+<p>These are available from the Elements pane, in the form of a classified
+tree view.</p>
+<p>This help page covers the standard set of simulation entities provided
+in ESL-Studio (in alphabetical order).</p>
+<h3 id="Absolute">Absolute</h3>
+<p>Absolute value of input. This is the modelling version of the standard
+function which treats changes in output as discontinuities (uses
+Library submodel ABSX).</p>
+<h3 id="Arc_Cosine">Arc Cosine</h3>
+<p>Arc-cosine of input.</p>
+<h3 id="Arc_Sine">Arc Sine</h3>
+<p>Arcsine of input.</p>
+<h3 id="Arc_Tangent">Arc Tangent</h3>
+<p>Arctangent of input.</p>
+<h3 id="Arc_Tangent_2">Arc Tangent 2</h3>
+<p>Arctangent of two inputs (x / y).</p>
+<h3 id="Backlash">Backlash</h3>
+<p>Comparator with backlash - logical output becomes TRUE when input x
+greater than or equal to upper limit and FALSE when less than lower
+limit (uses Library submodel COMPB).</p>
+<h3 id="Base_10_Logarithm">Base 10 Logarithm</h3>
+<p>Logarithm to base 10 of input.</p>
+<h3 id="Bistable">Bistable</h3>
+<p>Bistable storage device - stores logical input as the clock input
+becomes TRUE (uses Library submodel BISTBL).</p>
+<h3 id="Comparator">Comparator</h3>
+<p>Logical output true if inputs (x &gt;= y).</p>
+<h3 id="Complex_Pole">Complex Pole</h3>
+<p>Second order lag (uses Library submodel CMPXPL).</p>
+<h3 id="Constant_False">Constant False</h3>
+<p>LOGICAL constant with value FALSE.</p>
+<h3 id="Constant_Integer">Constant Integer</h3>
+<p>INTEGER constant value.</p>
+<h3 id="Constant_Logical">Constant Logical</h3>
+<p>LOGICAL constant value determined by attribute.</p>
+<h3 id="Constant_Multiplier">Constant Multiplier</h3>
+<p>Multiplies input by a constant (y = K * x).</p>
+<h3 id="Constant_Real">Constant Real</h3>
+<p>REAL constant value.</p>
+<h3 id="Constant_True">Constant True</h3>
+<p>LOGICAL constant with value TRUE.</p>
+<h3 id="Cosine">Cosine</h3>
+<p>Cosine of input in radians.</p>
+<h3 id="Deadspace">Deadspace</h3>
+<p>Simulates the effect of a 'deadspace'. Output y = 0.0, if LL &lt; x
+&lt; UL; y = x-UL, if x &gt;= UL; y = x-LL, if x &lt;= LL (uses Library
+submodel DEADSP).</p>
+<h3 id="Delay">Delay</h3>
+<p>Periodically samples a continuous input signal and delays output of the
+sampled signal for a fixed period of time, for example a pipeline delay
+(uses Library submodel DELAY).</p>
+<h3 id="Derivative">Derivative</h3>
+<p>First-order derivative (uses Library submodel DERIV).</p>
+<h3 id="Divider">Divider</h3>
+<p>Quotient of signed inputs (x / y).</p>
+<h3 id="Exponential">Exponential</h3>
+<p>Exponential of input (e ** x).</p>
+<h3 id="First_Order_Hold">First Order Hold</h3>
+<p>Periodically samples a continuous input signal and produces an output
+of the last sample modified with a slope calculated by the previous two
+samples (uses Library submodel FHOLD).</p>
+<h3 id="Fourier_Transform">Fourier Transform</h3>
+<p>Fourier integrator - Calculates the rms magnitude and angle of a
+specified harmonic component of the Fourier series for an input signal.
+Prints stats at the end of each cycle (uses Library submodel FOURINT).</p>
+<h3 id="Friction">Friction</h3>
+<p>Determines the friction between sliding surfaces from applied force and
+relative velocity (uses Library submodel COULOMB).</p>
+<h3 id="Function_Generator">Function Generator</h3>
+<p>Generates function values from a one-, two- or three- dimension table
+(uses Library submodel FG3D).</p>
+<h3 id="Hysteresis">Hysteresis</h3>
+<p>Implements a pure hysteresis or backlash function (uses Library
+submodel HSTRSS).</p>
+<h3 id="Impulse_Input">Impulse Input</h3>
+<p>Generates a periodic train of impulses with a controlled delay before
+the first pulse (uses Library submodel IMPUL).</p>
+<h3 id="Integer">Integer</h3>
+<p>Output is the integer value of real input. This is the modelling
+version of the standard function which treats changes in output as
+discontinuities (uses Library submodel INTX).</p>
+<h3 id="Integer_Input">Integer Input</h3>
+<p>INTEGER input argument to a submodel.</p>
+<h3 id="Integer_Output">Integer Output</h3>
+<p>INTEGER output argument from a submodel.</p>
+<h3 id="Integrator">Integrator</h3>
+<p>Integral of input with respect to time.</p>
+<h3 id="Lead_Lag">Lead Lag</h3>
+<p>Lead-lag transfer function (uses Library submodel LEDLAG).</p>
+<h3 id="Limited_Integrator">Limited Integrator</h3>
+<p>Integrator in which output is bounded between lower and upper limits
+(uses Library submodel LIMINT).</p>
+<h3 id="Limiter">Limiter</h3>
+<p>The output follows the input provided the input remains between lower
+and upper limits. The output is held at a limit if the input goes
+outside the limits (uses Library submodel LIMIT).</p>
+<h3 id="Logical_And">Logical And</h3>
+<p>Logical AND (conjunction) of two inputs.</p>
+<h3 id="Logical_Input">Logical Input</h3>
+<p>LOGICAL input argument to a submodel.</p>
+<h3 id="Logical_Integrator">Logical Integrator</h3>
+<p>Logically controlled integrator - the integrator's mode of operation is
+controlled by logical input signals (uses Library submodel LOGINT).</p>
+<h3 id="Logical_Negation">Logical Negation</h3>
+<p>Logical NOT (negation) of input.</p>
+<h3 id="Logical_Or">Logical Or</h3>
+<p>Logical OR (disjunction) of two inputs.</p>
+<h3 id="Logical_Output">Logical Output</h3>
+<p>LOGICAL output argument from a submodel.</p>
+<h3 id="Modulator">Modulator</h3>
+<p>Pulse width modulator - generates a periodic logical pulse train with
+the mark/space ratio being controlled by an input variable and an
+optional time delay before the first transition (uses Library submodel
+MODULT).</p>
+<h3 id="Monostable">Monostable</h3>
+<p>Output set TRUE when input becomes positive and remains set for at
+least a time period specified by attribute, or until the input variable
+becomes negative (uses Library submodel MONO).</p>
+<h3 id="Multiplier">Multiplier</h3>
+<p>Product of signed inputs (x * y).</p>
+<h3 id="Natural_Logarithm">Natural Logarithm</h3>
+<p>Natural logarithm of input.</p>
+<h3 id="PI_Controller">PI Controller</h3>
+<p>Proportional plus integral (PI) controller (uses Library submodel
+PICONT).</p>
+<h3 id="PID_Controller">PID Controller</h3>
+<p>Three term (PID) controller with limited output and integral
+anti-windup (uses Library submodel PIDCONT).</p>
+<h3 id="PID_Controller_1">PID Controller 1</h3>
+<p>Three term (PID) controller with limited output, anti-windup and
+deadspace (uses Library submodel PIDCONT1).</p>
+<h3 id="Plot">Plot (Display Icon)</h3>
+<p>Display a runtime plot by connecting instrumentation lines to outputs.</p>
+<h3 id="Power">Power</h3>
+<p>Raises first input to value of second input (exponentiation) (x ** y).</p>
+<h3 id="Prepare">Prepare (Display Icon)</h3>
+<p>Produce a prepare file at runtime by connecting instrumentation lines
+to outputs.</p>
+<h3 id="Pulse_Input">Pulse Input</h3>
+<p>Generates a unit pulse of specified duration (uses Library submodel PULSE).</p>
+<h3 id="Quantizer">Quantizer</h3>
+<p>Quantizes a continuous input signal into values which are integer
+multiples of a specified quantization value (uses Library submodel
+QNTZR).</p>
+<h3 id="Ramp_Input">Ramp Input</h3>
+<p>Generates a ramp of unit slope after optional initial time delay (uses
+Library submodel RAMP).</p>
+<h3 id="Real_Input">Real Input</h3>
+<p>REAL input argument to a submodel.</p>
+<h3 id="Real_Output">Real Output</h3>
+<p>REAL output argument from a submodel.</p>
+<h3 id="Real_Pole">Real Pole</h3>
+<p>First order lag (uses Library submodel REALPL).</p>
+<h3 id="Rectifier">Rectifier</h3>
+<p>The operation of a Silicon Controlled Rectifier (SCR) is represented
+for given inputs of current, voltage and gate pulse (uses Library
+submodel RECT).</p>
+<h3 id="Sample_and_Hold">Sample and Hold</h3>
+<p>Periodically samples a continuous input signal and outputs the value at
+the last sampling point (uses Library submodel SAMHLD).</p>
+<h3 id="Sine">Sine</h3>
+<p>Sine of input in radians.</p>
+<h3 id="Sine_Input">Sine Input</h3>
+<p>Generates a sine wave of specified amplitude, frequency, and phase.</p>
+<h3 id="Square_Input">Square Input</h3>
+<p>Generates a square wave of specified amplitude, M/S ratio, period, and
+initial time-delay (includes Library submodel MODULT).</p>
+<h3 id="Square_Root">Square Root</h3>
+<p>Square root of absolute value of real input (uses Library submodel
+SQRTX).</p>
+<h3 id="Standard_Integrator">Standard Integrator</h3>
+<p>Integral of input with respect to time.</p>
+<h3 id="Step_Input">Step Input</h3>
+<p>Generates a step function (includes Library submodel STEPP).</p>
+<h3 id="Submodel_Call">Submodel Call</h3>
+<p>Calls a submodel.</p>
+<h3 id="Summer">Summer</h3>
+<p>Sum of two signed inputs (x + y).</p>
+<h3 id="Summer_3">Summer 3</h3>
+<p>Sum of three signed inputs (x + y + z).</p>
+<h3 id="Switch">Switch</h3>
+<p>Switch between two REAL inputs depending on LOGICAL control input.</p>
+<h3 id="Table">Table (Display Icon)</h3>
+<p>Display a runtime table by connecting instrumentation lines to outputs.</p>
+<h3 id="Tangent">Tangent</h3>
+<p>Tangent of input in radians.</p>
+<h3 id="Time_Input">Time Input</h3>
+<p>Simulation time (T).</p>
+<h3 id="Timer">Timer</h3>
+<p>Measures the simulation time which has elapsed since it was reset by a
+logical input (uses Library submodel TIMER).</p>
+<h3 id="Transfer_Function">Transfer Function</h3>
+<p>Specifies a Laplace Transfer Function (generates an ESL TRANSFER
+statement).</p>
+<h3 id="Zero_Order_Hold">Zero Order Hold</h3>
+<p>Output holds value of x input when hold input becomes TRUE. While hold
+is FALSE output is equal to input (uses Library submodel ZHOLD).</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="std-menu.html" class="btn btn-neutral float-left" title="ESL-Studio Standard Menu"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="esl-sec.html" class="btn btn-neutral float-right" title="ESL-SEC - Simulation Execution Control">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright (c) 2026 Ryllan J E Kraft</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="std-menu.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="esl-sec.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
