@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ryllan J E Kraft" /><link rel="canonical" href="https://ryllank.github.io/esl-studio/guides/properties.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>View and Simulation Entity Properties - ESL-Studio</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../extra/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "View and Simulation Entity Properties";
+        var mkdocs_page_input_path = "guides/properties.md";
+        var mkdocs_page_url = "/esl-studio/guides/properties.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../img/ESL-Studio-logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../index.html">ESL-Studio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview of ESL-Studio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="std-menus.html">ESL-Studio Standard Menus</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="std-entities.html">The ESL-Studio Standard Simulation Entities</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">View and Simulation Entity Properties</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#general-property-features">General property features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-properties">Basic properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esl-name-properties">ESL Name properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esl-value-properties">ESL Value properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dimensionality-properties">Dimensionality properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#annotations">Annotations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variables-and-parameters">Variables and Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#view-properties">View Properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#program-and-model">Program and Model</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#program-properties">Program properties</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#diagram-model-properties">Diagram Model properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#diagram-submodel-properties">Diagram Submodel properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#diagram-segment-properties">Diagram Segment properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textual-subprograms">Textual Subprogram(s)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#esl-import-properties">ESL Import properties</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#file-import-properties">File Import properties</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#package-properties">Package properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#simulation-parameters-properties">Simulation Parameters properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#simulation-setup-properties">Simulation Setup properties</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#simulation-entity-properties">Simulation Entity Properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#simulation-entity-attributes">Simulation Entity Attributes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#simulation-entity-ports">Simulation Entity Ports</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#special-simulation-entities">Special Simulation Entities</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#subprogram-calls-and-code-inserts">Subprogram Calls and Code Inserts</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#submodel-call">Submodel Call</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#segment-call">Segment Call</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-call">Function Call</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#code-insert">Code Insert</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#subprogram-arguments">Subprogram Arguments</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#input-arguments">Input Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#output-arguments">Output Arguments</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#constant-inputs">Constant Inputs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transfer-function">Transfer Function</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="esl-sec.html">ESL-SEC - Simulation Execution Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="esl-displays.html">ESL-Displays - Post Run Analysis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">ESL-Studio</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User Guide</li>
+      <li class="breadcrumb-item active">View and Simulation Entity Properties</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="view-and-simulation-entity-properties">View and Simulation Entity Properties</h1>
+<p>The ESL-Studio Properties pane allows you to edit the properties of 
+views and selected diagram objects.</p>
+<p>This section covers the general property features and then covers the
+main views, and particular special simulation entities.</p>
+<h2 id="general-property-features">General property features</h2>
+<p>The header area of the Properties pane is usually set with a simple 
+description or the name for the view or object whose properties are 
+being shown. It also shows a 'Help' button, which allows you to toggle 
+on or off a display area at the bottom of the pane to show any "help" 
+text or hints associated with any selected item on the pane. If this 
+"help" area is not being shown, the "help" text may be seen as a 
+"tool-tip" by hovering the mouse pointer over the item.</p>
+<p>In some cases, additional buttons may be put in the header area, for 
+example for subprogram views to add and delete Parameter Variable 
+properties for the subprogram. </p>
+<h3 id="basic-properties">Basic properties</h3>
+<p>Properties may be just simple types, such as strings, possibly with 
+restrictions, or compound properties, such as for a simulation entity 
+Port, which consists of a set of properties.</p>
+<p>Unrestricted string properties are used to let you enter any text, such 
+as for a description for a particular simulation entity on a diagram, 
+which may be displayed (as an Annotation) on the diagram.</p>
+<p>String properties are shown on the Properties pane in the form of a 
+text entry box.</p>
+<p>Some properties take a value from a discrete a set of strings, which 
+are usually shown as a "drop-down" list or menu.</p>
+<p>Boolean properties are usually shown in the form of a checkbox 
+(unlike Logical ESL Values).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most of the properties shown in a pane or view are editable, but 
+some are for information, such as a summary for a type of 
+simulation entity or the defined Tag for an Attribute. </p>
+</div>
+<h3 id="esl-name-properties">ESL Name properties</h3>
+<p>ESL name properties are strings with restrictions, as they must pass 
+them as identifiers when the generated ESL code is given to the ESL 
+Compiler. They must begin with a letter, and contain only letters, 
+digits and underscores. They are validated to see if they are unique 
+(in the 24 characters) in the scope (or region) of the generated code 
+in which they will appear.</p>
+<p>In many cases, ESL-Studio may generate a default name, which can be 
+changed by a valid entry in the text entry box. The default value can 
+be reinstated, if wanted, by clearing the text entry box. When the 
+default value is being shown, ESL-Studio may mark the appearance of the 
+property value by colour (light grey) and with an asterisk (*).</p>
+<h3 id="esl-value-properties">ESL Value properties</h3>
+<p>ESL Values are shown as a text entry box (except in the case of 
+simulation entity Attributes using a 'Source') with additional 
+validation. Values for Real are usually validated for being acceptable 
+floating point literal values; Integers type for integer literals; and 
+Logical types for "TRUE" or "FALSE" (with acceptable abbreviated forms 
+such as "T" "F" (case-insensitive) or "1" "0"). If a validation fails 
+at the time of entry it is rejected. If a validation fails for an ESL 
+Value when some other related property changes (such as the Data Type) 
+ESL-Studio may mark the appearance of the property value by colour 
+(a pale orange) and with an exclamation mark (!).</p>
+<p>You may want to set an ESL Value literal to a known ESL identifier, 
+which, to pass the ESL Compiler, would need to be a Constant Variable's 
+name in use in scope of the current subprogram diagram view. You can 
+enable this by a button beside the ESL Value text entry box, which 
+toggles the use of validation. If a value has not been validated, 
+ESL-Studio may mark the appearance of the property value by colour 
+(light blue) and with a question mark (?).</p>
+<p>There is a special case of ESL Value in simulation entity Attributes 
+when the value for the attribute, rather than direct text entry, can be 
+taken from a 'Source'. The value is to be (the value of) an appropriate 
+variable defined elsewhere in the application. For example, these 
+include subprogram Parameters or Package Variables, named output Ports, 
+and certain Reserved variables of the appropriate type. Then the ESL 
+Value property is shown as a "drop-down" list containing the names of 
+the variables available in the subprogram scope (that suit this 
+particular ESL Value).</p>
+<h3 id="dimensionality-properties">Dimensionality properties</h3>
+<p>There are some properties that allow you, when working with  arrays, 
+matrices or vectors, to define dimensionality of what will become an 
+ESL variable in the code generation. These include the 'Dimensions' 
+property for variable definitions, and in argument simulation 
+entities, used defining diagram subprogram inputs and outputs. Also, 
+for ports, the special 'Fix Dimensions' property.</p>
+<p>These properties are shown as text entry boxes, that are validated for 
+strict restrictions as to the textual format the dimensions you can 
+enter. This format is an extended form of the ESL specification. To fix 
+the dimensionality, up to 3 dimensions are permitted, and each such 
+dimension may (optionally) have an integer lower bound (defaults to 1) 
+and a (required) upper bound.</p>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>Dimensions</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2,-1..1</td>
+<td>A 2 dimensional, 6 element, array (matrix) with first indexed 1 to 2 and second dimension indexed -1 to 1.</td>
+</tr>
+<tr>
+<td>0..2</td>
+<td>A 1 dimensional, 3 element, array (vector) elements indexed 0 to 2.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When joining fixed dimensioned signal lines between ports or 
+assigning dimensioned variables as a 'Source' to a fixed dimensioned 
+simulation entity attribute value, ESL-Studio normally validates 
+just that the number of dimensions and the number of elements in 
+each dimension are the same, and does not regard different 
+lower/upper bounds as having to be matched.</p>
+</div>
+<p>In some cases, notably for diagram Submodel arguments, and accordingly 
+for Submodel Calls, the dimensionality can be "generic" - in which one 
+or more dimensions can be defined as of arbitrary length for the 
+purposes of connecting or 'Source' assignment. These are defined 
+textually with an asterisk ('*'), as for the ESL specification.</p>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>Dimensions</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3,*</td>
+<td>A 2 dimensional array (matrix) with three rows each of arbitrary length.</td>
+</tr>
+</tbody>
+</table>
+<p>There is another special "generic" notation, dot-dot-dot ('...', for an 
+ellipsis) to indicate universal dimensionality, used for the return 
+result from a Function Call. This output port match with another port 
+of any dimensionality, or none, that is a scalar, too.</p>
+<p>When assigning initial values, for example in a variable definition or 
+for a simulation entity property value that has a dimensionality, the 
+exact number of elements in the array must be specified. The text entry 
+format to represent array element values is same as for ESL array, 
+comma separated single values, and the use of a multiplier, an integer 
+and asterisk (*) before a value, for a sequence of element values, 
+which may be mixed.</p>
+<p>For example, to set element values for an array with six elements, such 
+as a 2x3 matrix, you could specify: <code>1.1, 2.1, 3.1, 1.2, 2.2, 3.2</code> or 
+<code>6 * 100</code> or <code>1, 2*3, 2*5, 6</code>.</p>
+<p>It can be important to know or define the internal order of indexing of 
+elements in a multidimensional array, for instance when assigning 
+initial values for a matrix that may be used as a lookup table. By 
+default, ESL-Studio will consider the elements assigned in "row-major" 
+order, that is the last dimension (column in a 2D matrix) changes most 
+rapidly and earlier dimensions slower. This is equivalent to enclosing 
+the array element values in square brackets ([&nbsp;...&nbsp;]). If you want to 
+use "column-major" order, the transposed order in which the first 
+dimension changes most rapidly (before the other dimensions) you must 
+enclose the values with slashes (/&nbsp;...&nbsp;/).</p>
+<p>In the example <code>1.1, 2.1, 3.1, 1.2, 2.2, 3.2</code> the number before the decimal point is the column (2nd) index and the number after is the row (1st) index.</p>
+<h3 id="annotations">Annotations</h3>
+<p>For some sets of properties, and in particular most compound 
+properties, it is possible to set an Annotation for the property, a 
+string of text, appearing on the diagram. The Annotation may be 
+composed of one or more components joined together in the text. The 
+text will be set next to its object on the diagram, and move with it, 
+or in a default location for Annotations for a view.</p>
+<p>You may select the Annotation text, and independently move it, relative 
+to its object, and change some properties of the text. The actual text 
+will change when the Annotation set of selected components changes or 
+when any of the property values selected change.</p>
+<h3 id="variables-and-parameters">Variables and Parameters</h3>
+<p>Variables may be defined as Parameters in a diagram subprogram, by 
+adding a variable property (with a plus (+) button in the subprogram's 
+Properties pane header). The same format is used for Package Variables, 
+added in the same way in a Package view.</p>
+<p>A variable is defined by a compound property with the components 
+described in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESL Name</td>
+<td>An ESL identifier (A..Z 0..9 _) for the variable.<br>The ESL Name must be unique (in 28chars) in its subprogram scope.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of this variable.<br>Note: This is a comment in generated ESL.</td>
+</tr>
+<tr>
+<td>Data Type</td>
+<td>ESL data type for the variable. One of Real, Integer, Logical.</td>
+</tr>
+<tr>
+<td>Kind of Variable</td>
+<td>One of Parameter, Constant, Variable.<br>Parameter - value can be set interactively before a simulation run but is not changed by the simulation itself.<br>Constant - value fixed here.<br>Variable - value can be changed interactively and can change during a simulation run.</td>
+</tr>
+<tr>
+<td>Dimensions</td>
+<td>For ESL Array or Matrix (blank for a scalar).<br>For each dimension (up to 3) you can optionally set a lower bound and must set an upper bound.<br>Examples: 3,3 &emsp; 0..2,7..9,-1..1</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>Initial value for a variable.<br>For an Array/Matrix, scalar elements (or multiples of them) separated by commas, must have the full number of elements.<br>For a 2D/3D Matrix you may enclose in square brackets for row-major order (the default), or specifically enclose with slashes for column-major order."</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The scope of an ESL Name for a variable refers to the subprogram in 
+which it is being defined. Any other variables, for instance in 
+packages being "Used" by the subprogram or for named output ports, 
+are not permitted to clash with subprogram variable name.</p>
+</div>
+<h2 id="view-properties">View Properties</h2>
+<h3 id="program-and-model">Program and Model</h3>
+<p>ESL-Studio always has a permanent view in the main view area to define
+the application's Program type and its (main) model.</p>
+<h4 id="program-properties">Program properties</h4>
+<p>Program properties given in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Program Type</td>
+<td>Program Type can be one of:<br>- "study" for a normal MODEL (recommended - for use here)<br>- "embedded-program" to generate an EMBEDDED SEGMENT (that may be compiled and embedded in an executable program)<br>- "remote-program" to generate a REMOTE SEGMENT (that may run with a MODEL or program in another process or computer).</td>
+</tr>
+<tr>
+<td>Program Name</td>
+<td>A name you can give for the Program.<br>This can be any text, but should be short.<br>Note: This is a comment in generated ESL.</td>
+</tr>
+<tr>
+<td>Program Description</td>
+<td>Description of the Program.<br>Note: This is a comment in generated ESL.</td>
+</tr>
+<tr>
+<td>Experiment</td>
+<td>Experiment ESL text (source code).<br>This only applies for a STUDY Program (ignored for a remote or embedded program).<br>Note that when this is set it will override any values set in simulation parameters.<br>Use the first button to see and edit the experiment in a multi-line dialog.<br>Use the second button to pre-load the dialog with the default experiment (including simulation parameters and any IO) that would be generated.<br>Clear this experiment property value to reset to the default.</td>
+</tr>
+<tr>
+<td>Annotations</td>
+<td>Show annotations for the Program on the diagram.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagram-model-properties">Diagram Model properties</h3>
+<p>The Properties pane header area has plus (+) and minus (-) buttons 
+labelled 'Parameter' to allow you to add and delete variables to the 
+Model Parameters section at the bottom.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESL Name</td>
+<td>An ESL identifier (A..Z 0..9 _) of this module.<br>The ESL Name must be unique (in 28chars) in the application scope</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of this module.<br>Note: This is a comment in generated ESL.</td>
+</tr>
+<tr>
+<td>Annotations</td>
+<td>Show annotations for the module on the diagram.</td>
+</tr>
+<tr>
+<td>Model Type</td>
+<td>Model Type can be one of:<br>- "model" for a normal MODEL (for use in a Study Program)<br>- "embedded" to generate an EMBEDDED SEGMENT (that may be compiled and used in an Embedded Program)<br>- "remote" to generate a REMOTE SEGMENT (that may run with a MODEL or program for a Remote Program in another process or computer).</td>
+</tr>
+<tr>
+<td>Use Packages</td>
+<td>Names of packages whose variables are imported and are available for use in this module.<br>Variables in packages must not have the same name as a variable in (or imported into) this module.</td>
+</tr>
+</tbody>
+</table>
+<p>These are followed by any variables defined as Model Parameters.</p>
+<h3 id="diagram-submodel-properties">Diagram Submodel properties</h3>
+<p>The Properties pane header area has plus (+) and minus (-) buttons 
+labelled 'Parameter' to allow you to add and delete variables to the 
+Submodel Parameters section at the bottom.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESL Name</td>
+<td>An ESL identifier (A..Z 0..9 _) of this module.<br>The ESL Name must be unique (in 28chars) in the application scope.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of this module.<br>Note: This is a comment in generated ESL.</td>
+</tr>
+<tr>
+<td>Annotations</td>
+<td>Show annotations for the module on the diagram.</td>
+</tr>
+<tr>
+<td>Use Packages</td>
+<td>Names of packages whose variables are imported and are available for use in this module.<br>Variables in packages must not have the same name as a variable in (or imported into) this module.</td>
+</tr>
+</tbody>
+</table>
+<p>These are followed by any variables defined as Submodel Parameters.</p>
+<h3 id="diagram-segment-properties">Diagram Segment properties</h3>
+<p>The Properties pane header area has plus (+) and minus (-) buttons 
+labelled 'Parameter' to allow you to add and delete variables to the 
+Segment Parameters section at the bottom.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESL Name</td>
+<td>An ESL identifier (A..Z 0..9 _) of this module.<br>The ESL Name must be unique (in 28chars) in the application scope.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of this module.<br>Note: This is a comment in generated ESL.</td>
+</tr>
+<tr>
+<td>Annotations</td>
+<td>Show annotations for the module on the diagram.</td>
+</tr>
+<tr>
+<td>External Segment</td>
+<td>Checkbox to toggle whether the segment is to be declared External (to be evaluated in an Remote Program/External Segment), or to be emulated here.</td>
+</tr>
+<tr>
+<td>Use Packages</td>
+<td>Names of packages whose variables are imported and are available for use in this module.<br>Variables in packages must not have the same name as a variable in (or imported<br>into) this module.</td>
+</tr>
+</tbody>
+</table>
+<p>These are followed by any variables defined as Segment Parameters.</p>
+<h3 id="textual-subprograms">Textual Subprogram(s)</h3>
+<p>Both types of Textual Subprogram views, ESL Import and File Import, have the first two properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Description</td>
+<td>Description of this code import module.<br>Note: This is not used in generated ESL.</td>
+</tr>
+<tr>
+<td>Code Type</td>
+<td>Code Type will be one of:<br>- "ESL" for one or more internal textual subprograms<br>- "file" for one or more textual subprograms read from a file.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="esl-import-properties">ESL Import properties</h4>
+<p>An ESL Import view, Code Type "ESL", has an additional property:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESL</td>
+<td>ESL text (source code) for the submodel.</td>
+</tr>
+</tbody>
+</table>
+<p>This property, which can only show a portion of the code, has a "..." 
+button to open a basic multi-line text editor, a modal dialog. However, 
+in practice, we recommend that it will be preferable to edit the ESL 
+code in the view itself.</p>
+<p>The ESL code is validated when any changes are committed into the 
+application (either via the modal edit dialog or by changes in the 
+view). If the changes are rejected the code shown in the view reverts 
+to the previous accepted contents.</p>
+<h4 id="file-import-properties">File Import properties</h4>
+<p>A File Import view, Code Type "file", has an additional property:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td>ESL file containing the submodel source code.</td>
+</tr>
+</tbody>
+</table>
+<p>This property has a "..." button to select the file. The file contents 
+is validated when selected, and if the changes are not rejected, the 
+view is updated (read-only) showing the contents of the file.</p>
+<h3 id="package-properties">Package properties</h3>
+<p>A Package, defined in a Package view, has its properties in its view 
+(in the main view area) rather than in the Properties pane. No 
+properties are shown in the Properties pane.</p>
+<p>The header part of the view has a 'Help' button, which allows you to 
+toggle on or off a display area at the bottom of the view to show any 
+"help" text (in a similar way to the Properties pane).</p>
+<p>The header part also has plus (+) and minus (-) buttons labelled 
+'Variable' to allow you to add and delete variables to the Package 
+Variables section.</p>
+<p>The properties for the Package itself are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESL Name</td>
+<td>An ESL identifier (A..Z 0..9 _) for the package.<br>The ESL Name must be unique (in 28chars) in the application scope.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description  of the Package.<br>Note: This is a comment in generated ESL.</td>
+</tr>
+</tbody>
+</table>
+<p>These are followed by any Package Variables.</p>
+<h3 id="simulation-parameters-properties">Simulation Parameters properties</h3>
+<p>The Simulation Parameters properties are shown in a standard view 
+(in the main view area), available via the View &gt; View Simulation 
+Parameters menu item.</p>
+<p>It allows you to explicitly set specific Simulation Parameters, that is 
+a specific set of variables defined by the ESL RESERVED package.</p>
+<p>By default, these Simulation Parameters will apply to the main model 
+(as defined in the permanent program and model view). If other Model or 
+Segment diagram views have been inserted, the Simulation Parameters for 
+these may be set in this view. The header part of the view has a 
+"drop-down" list with the names of the modules for which you may set 
+Simulation Parameters. When you change this module, this view shows the 
+new set of Simulation Parameters, and also the Properties pane will 
+show the properties for the corresponding diagram view. </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Default</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSTART</td>
+<td>Real</td>
+<td>0.0</td>
+<td>Initial value of T at start of run</td>
+</tr>
+<tr>
+<td>TFIN</td>
+<td>Real</td>
+<td>10.0</td>
+<td>Final value of T at end of run</td>
+</tr>
+<tr>
+<td>CINT</td>
+<td>Real</td>
+<td>1.0</td>
+<td>Communication interval</td>
+</tr>
+<tr>
+<td>DISERR</td>
+<td>Real</td>
+<td>0.0001</td>
+<td>Discontinuity detection error tolerance</td>
+</tr>
+<tr>
+<td>INTERR</td>
+<td>Real</td>
+<td>0.001</td>
+<td>Integration error tolerance</td>
+</tr>
+<tr>
+<td>ALGO</td>
+<td>"drop-down"</td>
+<td>RK5</td>
+<td>Integration algorithm</td>
+</tr>
+<tr>
+<td>NSTEP</td>
+<td>Integer</td>
+<td>1</td>
+<td>Number of integration steps in CINT</td>
+</tr>
+</tbody>
+</table>
+<p>Internally in ESL the ALGO (simulation algorithm) Simulation Parameter is held as an Integer, and given as that in the generated ESL code. Here it is shown as a "drop-down" list and, can take the following values:</p>
+<table>
+<thead>
+<tr>
+<th>ALGO Name</th>
+<th>Integer value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RK1 (Euler 1st order)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>RK2 (Runge-Kutta 2nd order)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>RK4 (Runge-Kutta 4th order)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>RK5 (variable-step 5th order)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>GEAR1 (Gear variable-step)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>GEAR2 (Gear diagonal Jacobean)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>STIFF2 (stiff 2nd order)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>ADAMS (Adams predictor-corrector)</td>
+<td>7</td>
+</tr>
+<tr>
+<td>LIN1 (Newton-Raphson trim)</td>
+<td>21</td>
+</tr>
+<tr>
+<td>LIN2 (Simplex trim)</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+<p>Where any of these are explicitly set, the generated ESL code will 
+contain these assignments in the "initial" region of the relevant 
+module's subprogram code. Where not set it will generally take the 
+default values, or for a Segment, default to the corresponding value in 
+the Model invoking the segment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you defined an experiment for the Program, then if it includes 
+any Simulation Parameter assignments, and any of these clash with 
+Simulation Parameters explicitly set in this view for a Model, then 
+these will supersede those in the Program experiment code.</p>
+<p>The Simulation Parameters view will show a warning message:</p>
+<pre><code>Warning: Program experiment is set
+Simulation Parameters explicitly set here (generated in the ESL "initial" region)
+will override any explicitly set by the program experiment.
+</code></pre>
+</div>
+<h3 id="simulation-setup-properties">Simulation Setup properties</h3>
+<p>The Simulation Setup properties are shown in a standard view (in 
+the main view area), available via the View &gt; View Simulation Setup 
+menu item. No properties are shown in the Properties pane.</p>
+<p>This view allows you to specify display options and features of ESL 
+code generation and the ESL programs to build and run the application, 
+which you initiate with the Simulate &gt; Run Simulation menu item.</p>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generate only - do not run</td>
+<td>Checkbox to toggle whether the application just be generated, that is it should not be run (if the generation was successful).</td>
+</tr>
+<tr>
+<td>View generated ESL</td>
+<td>Checkbox to view the generated ESL code. This will be shown in a read-only ESL Text view.</td>
+</tr>
+<tr>
+<td>Run with Simulation Execution<br>and Control (SEC)</td>
+<td>Checkbox to toggle whether to run the application with ESL-SEC, or to run it directly (in which you will be reminded of a number of restrictions).</td>
+</tr>
+<tr>
+<td>Execution Command:</td>
+<td>One of:<br>- Compile and Interpret<br>- Compile, Translate, Link and Execute<br>- Custom Run Command.</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>When the execution command is set with the 'Compile, Translate, Link and Execute' option you may select one of the "radio" buttons for "C++" or "Fortran".</td>
+</tr>
+<tr>
+<td>Extra Options:</td>
+<td></td>
+</tr>
+<tr>
+<td>&emsp;-single</td>
+<td>A checkbox, when the C/C++ language is specified with the 'Compile, Translate, Link and Execute' option, to specify to use single precision compilation and linking. This is required when the C/C++ code is to be linked in with Fortran code generated or compiled here.</td>
+</tr>
+<tr>
+<td>&emsp;-gcc</td>
+<td>A checkbox, available in the Windows version of ESL-Studio, when the C/C++ language is specified with the 'Compile, Translate, Link and Execute' option, to use the alternate MinGW-W64 compilers and linker in place of the Visual Studio versions.</td>
+</tr>
+<tr>
+<td>Additional Link Objects:</td>
+<td>Space separated list of base filenames (in the current directory) for binary object files when the execution command is set with the 'Compile, Translate, Link and Execute' option. These object files will be given to the appropriate linker to be linked into the simulation executable. The base filenames should not normally include an extension (except that <code>.lib</code> is permitted for Windows Visual Studio object libraries), as the usual extension (<code>.obj</code> or <code>.o</code>) for the selected language will be used.</td>
+</tr>
+<tr>
+<td>Build Command:</td>
+<td>This field shows the build command that will be used for the selected execution command option. It cannot be edited. It shows <code>{AppBase}</code> for the name of the application generated ESL code - without the <code>.esl</code> extension. If the execution command is 'Custom Run Command' it is blank as it assumes a custom command will either include its own build step or rely on it being up to date.</td>
+</tr>
+<tr>
+<td>Run Command:</td>
+<td>This field shows the run command that will be used for the selected execution command option. When the execution command is 'Custom Run Command' it is initially blank and may be edited. It should be a command (appropriate to the platform). You can pass arguments to a customised run script, including <code>{AppBase}</code> or other available Setup pseudo-environment variables.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Setup pseudo-environment variables</th>
+<th>Substitution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{AppBase}</td>
+<td>The base name of the application generated ESL code.</td>
+</tr>
+<tr>
+<td>{gui}</td>
+<td>Will be "-gui" if the 'Run with Simulation Execution' checkbox is checked, otherwise blank.</td>
+</tr>
+<tr>
+<td>{translation}</td>
+<td>Will be "cc" if the 'Language' "radio" button for C/C++ is on, "f" for Fortran.</td>
+</tr>
+<tr>
+<td>{single}</td>
+<td>Will be "-single" if the checkbox option 'single' is checked, otherwise blank.</td>
+</tr>
+<tr>
+<td>{gcc}</td>
+<td>Will be "-gcc" if the checkbox option 'gcc' (for Windows) is checked, otherwise blank.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you set to run the application directly, that is not with 
+ESL-SEC, ESL-Studio will run the code in a background process - 
+which has no console for to allow text input. The generated code 
+will be different in small ways from that generated without this 
+limitation. Output from the simulation, including PRINT statements, 
+will be shown in the Messages pane.</p>
+<p>When the 'Run with ESL-SEC' checkbox is not checked, the Simulation 
+Setup view will show the following reminder message:</p>
+<pre><code>Run simulation directly: Display icons will be generated as PLOT/TABULATE/PREPARE
+statements. READ statements are not allowed.
+</code></pre>
+</div>
+<h2 id="simulation-entity-properties">Simulation Entity Properties</h2>
+<p>A simulation entity has a basic set of properties, though not all are 
+always available, from those in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>The type of the simulation entity.</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>The summary for this type of simulation entity.</td>
+</tr>
+<tr>
+<td>Help</td>
+<td>Source for help information for this type of simulation entity.<br>Double click property row to open.</td>
+</tr>
+<tr>
+<td>View</td>
+<td>ESL source code for this type of simulation entity.<br>Double click property row to open.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of this specific simulation entity.<br>Note: This is a comment in generated ESL.</td>
+</tr>
+<tr>
+<td>special subprogram<br>Call property</td>
+<td>To assign (or clear) an appropriate subprogram for the Call - one of<br>Submodel, Segment or Function.</td>
+</tr>
+<tr>
+<td>Annotations</td>
+<td>Show annotations for the simulation entity on the diagram.</td>
+</tr>
+</tbody>
+</table>
+<p>If you double-click on a simulation entity's Help property (where 
+available) it will normally open a link to the webpages information on 
+that entity in your default web browser. </p>
+<p>If you double-click on a View property (where available - for an ESL 
+Library submodel) it will open a read-only ESL Text view in the 
+main view area showing the code of the submodel.</p>
+<h3 id="simulation-entity-attributes">Simulation Entity Attributes</h3>
+<p>A simulation entity may also have a set of Attributes.</p>
+<p>An Attribute is defined by a compound property with the components 
+described in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tag</td>
+<td>Short tag-name for this attribute of the simulation entity.</td>
+</tr>
+<tr>
+<td>Data Type</td>
+<td>The value for this attribute must have this data-type.</td>
+</tr>
+<tr>
+<td>ESL Name</td>
+<td>An ESL identifier (A..Z 0..9 _) for the attribute.<br>The ESL Name must be unique (in 28chars) in its subprogram scope.<br>If not supplied an ESL name will be generated (shown with an asterisk).</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>Where the value for this attribute comes from:<br>Value - when the actual value is given<br>Parameter - when the module has suitable parameter(s) that can be assigned<br>Name of a Package - when used (imported) into the module<br>RESERVED - when the attribute is assigned the value of a simulation parameter<br>Output - for a named output in the module (of the right data type).</td>
+</tr>
+<tr>
+<td>Annotations</td>
+<td>Show an annotation for the attribute on the diagram.</td>
+</tr>
+</tbody>
+</table>
+<p>For most of the <a href="std-entities.html">standard simulation entities</a> the 
+Properties pane shows the set of attributes predefined for that type of 
+simulation entity, and in most cases the attribute Name and/or the Tag 
+should make clear how the simulation will use that attribute. Where 
+defined, some extra "Help/Hints" information may give guidance on how 
+to set the attribute. You may view this as a "tool-tip" (by hovering 
+the mouse pointer over the property component) or in the "help" area at 
+the bottom of the pane if shown.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the simulation entity has a View property, then viewing the 
+underlying ESL code (and its comments) may also help to clarify how 
+to use the simulation entity.</p>
+</div>
+<h3 id="simulation-entity-ports">Simulation Entity Ports</h3>
+<p>A simulation entity will usually have a set Ports.</p>
+<p>A Port is defined by a compound property with the components described 
+in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tag</td>
+<td>Short tag-name for this port of the simulation entity (if defined).</td>
+</tr>
+<tr>
+<td>Data Type</td>
+<td>The value associated with this port has this data-type.</td>
+</tr>
+<tr>
+<td>ESL Name</td>
+<td>An ESL identifier (A..Z 0..9 _) used an output port in ESL code.<br>The ESL Name must be unique (in 28chars) in its subprogram scope.<br>If not supplied an ESL name will be generated (shown with an asterisk).</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description for the port.<br>Note: This is a comment in generated ESL.</td>
+</tr>
+<tr>
+<td>Initial Value</td>
+<td>Initial value for the segment call output's variable.<br>Note, this will override any default Initial Value which have been set for a diagram segment on the corresponding Output Argument simulation entity.<br>For an Array/Matrix, scalar elements (or multiples of them) separated by commas, must have the full number of elements.<br>For a 2D/3D Array/Matrix you may enclose in square brackets for row-major order (the default), or specifically enclose with slashes for column-major order.</td>
+</tr>
+<tr>
+<td>Sign</td>
+<td>Arithmetic sign for the port.<br>For signable ports, for example for Summer or Multiplier types of simulation entities.</td>
+</tr>
+<tr>
+<td>Fix Dimensions</td>
+<td>Resolve a generic array dimensions to a fixed number of elements per dimension.<br>Set this to resolve an ambiguity - that is if the port is not connected to an input with fixed dimensionality.<br>For a universal dimensionality (as for a function call result) enter "SCALAR" (or "-") to fix to a scalar.</td>
+</tr>
+<tr>
+<td>Annotations</td>
+<td>Show an annotation for the port on the diagram.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For ports for a subprogram Call simulation entity, If the 
+Description is blank it will inherit from the subprogram's 
+argument Arg Description if set (shown with an asterisk).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>There is an 'Id' port annotation for the port's identifier (number) 
+which can help show which port is which on a simulation entity, 
+particularly when the simulation entity has been rotated or 
+mirrored. </p>
+</div>
+<h2 id="special-simulation-entities">Special Simulation Entities</h2>
+<h3 id="subprogram-calls-and-code-inserts">Subprogram Calls and Code Inserts</h3>
+<p>Subprogram Call simulation entities produce calls of a specified 
+subprogram (Submodel, Segment or Function) when the ESL code is 
+generated. The subprogram may be a diagram or a textual (code import) 
+one.</p>
+<p>The ports and attributes of a Call are determined by the "signature" of 
+the subprogram:</p>
+<ul>
+<li>an input argument normally shows as an input port on the simulation 
+  entity;</li>
+<li>however, if the input argument, defined (in a diagram) by an Input 
+  Argument has its Attribute checkbox check, or if defined by ESL 
+  textual code CONSTANT, then it shows as an attribute of the 
+  simulation entity; </li>
+<li>an output argument shows as an output port.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you change the subprogram for a subprogram Call, or change its 
+subprogram's "signature", the subprogram Call simulation entity's 
+appearance will change accordingly. If the Call has any connected 
+ports, then, while ESL-Studio will try to preserve any connections 
+it considers correspond from the old "signature" to the new one, it 
+may not do exactly as you would wish. We recommend you do not make 
+a complex set of connections to any Calls unless you are satisfied 
+the "signature" of their subprograms is unlikely to be 
+significantly changed.</p>
+</div>
+<h4 id="submodel-call">Submodel Call</h4>
+<p>The Submodel Call simulation entity has an additional entity property:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Submodel</td>
+<td>The submodel for the submodel call.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="segment-call">Segment Call</h4>
+<p>The Segment Call simulation entity has an additional entity property:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Segment</td>
+<td>The segment for the segment call.</td>
+</tr>
+</tbody>
+</table>
+<p>It also has special Segment Call Control properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Tag</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency of calls</td>
+<td>frequency</td>
+<td>Frequency of communication region calls for the segment - a multiple of communication interval (CINT).<br>Note: The segment should have its Simulation Parameter CINT set to this value multiplied by the CINT of the calling module.</td>
+</tr>
+<tr>
+<td>Time delay</td>
+<td>delay</td>
+<td>Frequency of communication region calls for the segment - a multiple of communication interval (CINT).<br>Note: The segment should have its Simulation Parameter TSTART set to this value.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-call">Function Call</h4>
+<p>The Segment Call simulation entity has an additional entity property:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Function</td>
+<td>The function for the function call.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="code-insert">Code Insert</h4>
+<p>The Code Insert simulation entity allows you to plant ESL code in the 
+code that is generated for the subprogram diagram. </p>
+<p>It has an additional entity Code Insert Properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESL Region</td>
+<td>ESL region in generated code to insert the code.<br>Note: The "terminal" and "analysis" regions are only applicable in a MODEL subprogram.</td>
+</tr>
+<tr>
+<td>Insert Position</td>
+<td>Insert the code at the beginning or end of the region - that is before or after generated code for the region.<br>The default is at the end.</td>
+</tr>
+<tr>
+<td>ESL Code</td>
+<td>The code insert's ESL text (source code).<br>Press the button to see and edit the code in a multi-line dialog.<br>This code is not validated in ESL-Studio (but is checked by the ESL compiler when the code is generated).<br>Note: Procedural code to be inserted in the "dynamic" region will have to be in a WHEN statement or PROCEDURAL model block.</td>
+</tr>
+<tr>
+<td>Output Ports</td>
+<td>A semicolon-separated set of ESL Data Types for the output ports (valid for dynamic, communications &amp; step regions).<br>Note: You must set the ESL Names for these ports to use in the ESL Code of this code insert.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="subprogram-arguments">Subprogram Arguments</h3>
+<p>Argument simulation entities are used to define the inputs and outputs 
+for a diagram subprogram (that is the "signature" of the 
+subprogram).</p>
+<h4 id="input-arguments">Input Arguments</h4>
+<p>The Real Input, Integer Input, and Logical Input simulation entities 
+have special Argument Attributes properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Tag</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arg Name</td>
+<td>ARG</td>
+<td>An ESL identifier (A..Z 0..9 _) for the argument in the generated ESL subprogram.<br>The Arg Name should be unique in 18chars in its subprogram (to allow for its use in generated variables).<br>If not supplied one will be generated (shown with an asterisk).</td>
+</tr>
+<tr>
+<td>Arg Description</td>
+<td>ARGDESC</td>
+<td>Description for this subprogram input port or attribute</td>
+</tr>
+<tr>
+<td>Dimension</td>
+<td>ARGDIMS</td>
+<td>For Array or Matrix.</td>
+</tr>
+<tr>
+<td>Attribute</td>
+<td>ATTR</td>
+<td>If Attribute is set the argument will be an attribute of the subprogram call, otherwise it will be an input port.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="output-arguments">Output Arguments</h4>
+<p>The Real Output, Integer Output, and Logical Output simulation entities 
+have special Argument Attributes properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Tag</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arg Name</td>
+<td>ARG</td>
+<td>An ESL identifier (A..Z 0..9 _) for the argument in the generated ESL subprogram.<br>The Arg Name should be unique in 18chars in its subprogram (to allow for its use in generated variables).<br>If not supplied one will be generated (shown with an asterisk).</td>
+</tr>
+<tr>
+<td>Arg Description</td>
+<td>ARGDESC</td>
+<td>Description for this subprogram output port.</td>
+</tr>
+<tr>
+<td>Dimensions</td>
+<td>ARGDIMS</td>
+<td>For Array or Matrix.</td>
+</tr>
+<tr>
+<td>Initial Value</td>
+<td>INIT</td>
+<td>Initial value for the variable for the segment call corresponding to this output argument.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="constant-inputs">Constant Inputs</h3>
+<p>The Constant Real, Constant Integer, and Constant Logical simulation 
+entities have special Attribute properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Tag</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>K</td>
+<td>Constant value consistent with the basic ESL datatype (Real) and the specified dimensions (if for an array).<br>Default 1.0</td>
+</tr>
+<tr>
+<td>Dimensions</td>
+<td>dimensions</td>
+<td>For ESL Array or Matrix (blank for a scalar).<br>For each dimension (up to 3) can optionally set lower bound and must set an upper bound.<br>Examples: 3,3 &emsp; 0..2,7..9,-1..1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transfer-function">Transfer Function</h3>
+<p>The Transfer Function simulation entity has special Transfer Function 
+Attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Tag</th>
+<th>Help/Hints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transfer Function</td>
+<td>TF</td>
+<td>Express the transfer function in the ESL notation for the Laplace transform with Laplacian operator &quot;s&quot; (and using ESL Names for variables).<br>Default 1/(s+1)</td>
+</tr>
+<tr>
+<td>Initial Conditions</td>
+<td>ICS</td>
+<td>One or more state variable initial conditions (not more than the number of states) - separate with comma.<br>Examples: 0.1 &emsp; YD0<br>Default 0.0</td>
+</tr>
+<tr>
+<td>Differential Equations</td>
+<td>TF-differential</td>
+<td>Checkbox to toggle whether to generate Transfer Function as differential equations if selected, else generate as an ESL TRANSFER statement.<br>Default False</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="std-entities.html" class="btn btn-neutral float-left" title="The ESL-Studio Standard Simulation Entities"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="esl-sec.html" class="btn btn-neutral float-right" title="ESL-SEC - Simulation Execution Control">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright (c) 2026 Ryllan J E Kraft</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="std-entities.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="esl-sec.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
