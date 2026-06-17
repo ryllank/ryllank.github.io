@@ -182,12 +182,13 @@ Model (to be set initially when running the ESL MODEL in the
 simulation).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Terms for something in ESL-Studio, normally given in title case,
-which correspond to something in the ESL Simulation Language, then
-that is then normally given in capitals.</p>
+<p>Certain items, which are normally expressed in title case in
+ESL-Studio, correspond to items in the ESL Simulation Language,
+where they are normally expressed in capitals.</p>
 <p>For example, in ESL-Studio, a Model is represented by a diagram
 view, containing connected simulation elements, and with a set of
-properties, which correspond to an ESL MODEL subprogram code block.</p>
+properties, which corresponds to an ESL MODEL subprogram code 
+block.</p>
 </div>
 <h3 id="developing-a-block-diagram">Developing a block diagram</h3>
 <p>In addition to the initial main model view, you can insert diagram 
@@ -300,7 +301,7 @@ entity.</p>
 <p>Input and Output Arguments for Submodel and Segment subprograms will 
 normally be realised as Ports for a subprogram Call simulation entity 
 (on another subprogram diagram), when the Call is set for this 
-submodel.</p>
+subprogram.</p>
 <p>Input Arguments have the (boolean) attribute called "Attribute" (Tag 
 "ATTR") which may be checked to specify that the input argument will be 
 'CONSTANT' in ESL and thus be an attribute for a subprogram Call for 
@@ -327,7 +328,7 @@ it, its properties, in the Properties Pane, include the appropriate
 subprogram property - initially blank. This has a "drop-down" list from
 which you may select from the set of subprograms of that type, which
 may be diagram or textual subprograms, that have been defined or
-imported in to the application.</p>
+imported into the application.</p>
 <p>When the subprogram property is assigned, the subprogram Call's
 appearance and properties, attributes and ports, are updated to reflect
 the "signature" of the subprogram.</p>
@@ -367,13 +368,13 @@ This is done with the special Code Insert simulation entity.</p>
 create a new editable text view in the main view area.
 You may edit the code in the view using standard text editing
 operations.
-You can also open a basic text modal dialog to show or edit the code #
+You can also open a basic text modal dialog to show or edit the code
 from the 'ESL' property for the view.</p>
 <p>You may commit the code being edited into the application via the
 context menu in the text view, and, in any case code changes will be
 committed when you move the mouse pointer away from the text view.
 When the commit takes place ESL-Studio performs basic code checks to
-validate the submodel "signature" and may show errors or warnings in
+validate the subprogram "signature" and may show errors or warnings in
 the Messages pane. For severe errors it will reject the changes, for
 less severe issues it does not prevent the edits being committed. This
 will allow you to commit invalid code which you plan to 'tidy up'
@@ -390,9 +391,9 @@ show the results.</p>
 <h4 id="importing-file-subprograms">Importing File subprograms</h4>
 <p>The Insert &gt; Textual Subprogram(s) &gt; File Import menu item is used to
 create a new read-only text view in the main view area.
-You can open a file selection dialog select an ESL file to be imported
-as a whole. The basic code checks are run on contents of the file and
-if accepted the contents are displayed in the text view.</p>
+You can open a file selection dialog and select an ESL file to be
+imported as a whole. The basic code checks are run on contents of the
+file and if accepted the contents are displayed in the text view.</p>
 <p>The context menu in the ESL Text view does not support edit operations,
 but has the options for displaying code, and searching the text as for
 the ESL Import. It also the has options 'Show code checks' and 'Run ESL
@@ -500,7 +501,7 @@ explicit LIBRARY references.</p>
 output port's 'Fix Dimensions' property.</p>
 </div>
 <p>If successful, ESL-Studio will invoke the ESL-SEC (Simulation Execution
-and Control) program. This has many features to set up more displays (in
+Control) program. This has many features to set up more displays (in
 addition to any defined in the ESL-Studio application) and to monitor
 simulation variables and step through the simulation.</p>
 <p><img alt="ESL-Studio running simulation" src="images/esl-studio-running-simulation.png" title="ESL-Studio - running simulation" /></p>
