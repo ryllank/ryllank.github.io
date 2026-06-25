@@ -1094,6 +1094,11 @@ significantly changed.</p>
 <td>Time delay before making the first call to the segment.<br>Note: The segment should have its Simulation Parameter TSTART set to this value.</td>
 </tr>
 <tr>
+<td>Call Order</td>
+<td>callorder</td>
+<td>Order (integer) to determine the position of this segment call, where there are multiple segment calls, in the generated code for the diagram subprogram this is in.<br>A higher call order value inserts the segment call after a lower one.</td>
+</tr>
+<tr>
 <td>Post Call Code</td>
 <td>postcallcode</td>
 <td>ESL code to be inserted directly after the segment call in the generated code for the calling module.<br>Press the button to see and edit the code in a multi-line dialog.<br>This code is not validated in ESL-Studio (but is checked by the ESL compiler when the code is generated).</td>
@@ -1147,6 +1152,17 @@ diagram that it is in.</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You may have any number of Code Inserts in a subprogram, in
+different regions and positions (at the beginning or end). We
+recommend that you use just one for a region and position where the
+order of the code inserts may matter, as in a procedural region, in
+particular the "communication" region. This is because the order of
+the code generation for multiple Code Inserts (for a region and
+position) is not explicitly determined, it depends on the order the
+Code Inserts were originally put into the diagram.</p>
+</div>
 <h3 id="subprogram-arguments">Subprogram Arguments</h3>
 <p>Argument simulation entities are used to define the inputs and outputs
 for a diagram subprogram (that is the "signature" of the
