@@ -983,7 +983,7 @@ in the table below.</p>
 </tr>
 <tr>
 <td>Initial Value</td>
-<td>Initial value for the segment call output's variable.<br>Note, this will override any default Initial Value which have been set for a diagram segment on the corresponding Output Argument simulation entity.<br>For an Array/Matrix, scalar elements (or multiples of them) separated by commas, must have the full number of elements.<br>For a 2D/3D Array/Matrix you may enclose in square brackets for row-major order (the default), or specifically enclose with slashes for column-major order.</td>
+<td>Initial value for segment call or code insert output's variable.<br>Note, for a segment call of a diagram segment, this will override any default Initial Value set in the diagram segment on the corresponding Output Argument simulation entity.<br>For an Array/Matrix, scalar elements (or multiples of them) separated by commas, must have the full number of elements.<br>For a 2D/3D Array/Matrix you may enclose in square brackets for row-major order (the default), or specifically enclose with slashes for column-major order.</td>
 </tr>
 <tr>
 <td>Sign</td>
@@ -1148,7 +1148,7 @@ diagram that it is in.</p>
 </tr>
 <tr>
 <td>Output Ports</td>
-<td>A semicolon-separated set of ESL Data Types for the output ports (valid for dynamic, communications and step regions).<br>Note: You must set the ESL Names for these ports to use in the ESL Code of this code insert.</td>
+<td>A semicolon-separated set of ESL Data Types for the output ports (valid for dynamic, communications and step regions)..<br>You can set bounds and dimensions for each port by specifying them (in brackets, in the ESL, comma-separated, style).<br>Note: You must set the ESL Names for these ports to use in the ESL Code of this code insert.</td>
 </tr>
 </tbody>
 </table>
